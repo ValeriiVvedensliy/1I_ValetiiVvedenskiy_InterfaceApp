@@ -14,10 +14,138 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "setUpView()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17CAD198-5359-4678-A6AF-94229C1D54BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/ImageListCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "setUpNavigationBarTitle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CB95017-DAC9-4F38-9F68-1D593A152F1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/GroupsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D578E84D-3583-4D47-AD06-064E2721CF96"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Mock/MockDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "addGroupByUser(groupName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD6268B4-25F7-478B-B750-A6F0F0845F51"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Mock/MockDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "addGroupByUser(groupName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64603160-2BFF-4C06-98D4-73DC3B7004F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/GroupsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "tableView(_:commit:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C079A915-06E8-4FB3-A9D4-3308886FDAB0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Mock/MockDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "addGroupByUser(groupName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C079A915-06E8-4FB3-A9D4-3308886FDAB0 - ac46065e2050ebfb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.MockDataSource.addGroupByUser(groupName: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Mock/MockDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "C079A915-06E8-4FB3-A9D4-3308886FDAB0 - a39e61aa435e9715"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (_I_ValetiiVvedenskiy_InterfaceApp.Group) -&gt; Swift.Bool in _I_ValetiiVvedenskiy_InterfaceApp.MockDataSource.addGroupByUser(groupName: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Mock/MockDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

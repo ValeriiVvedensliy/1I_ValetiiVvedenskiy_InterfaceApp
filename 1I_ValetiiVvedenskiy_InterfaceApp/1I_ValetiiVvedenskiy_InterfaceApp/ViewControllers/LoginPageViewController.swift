@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class LoginPageViewController: UIViewController {
 
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var imageView: UIImageView!
