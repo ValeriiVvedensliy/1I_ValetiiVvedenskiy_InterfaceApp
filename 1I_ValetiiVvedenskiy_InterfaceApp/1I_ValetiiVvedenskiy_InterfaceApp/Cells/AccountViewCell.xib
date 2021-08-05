@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,6 +20,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRV-nC-iLz">
                         <rect key="frame" x="0.0" y="0.0" width="364" height="100"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJT-e3-M5h">
+                                <rect key="frame" x="25" y="15" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Cq0-5p-BA4"/>
+                                    <constraint firstAttribute="height" constant="70" id="rnE-se-fhF"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nIs-Of-VOg">
                                 <rect key="frame" x="25" y="15" width="70" height="70"/>
                                 <constraints>
@@ -36,6 +45,7 @@
                         <constraints>
                             <constraint firstItem="nIs-Of-VOg" firstAttribute="centerY" secondItem="aRV-nC-iLz" secondAttribute="centerY" id="9z0-NQ-1e4"/>
                             <constraint firstAttribute="trailing" secondItem="bgX-qS-X3E" secondAttribute="trailing" constant="5" id="GcR-HM-7rA"/>
+                            <constraint firstItem="PJT-e3-M5h" firstAttribute="leading" secondItem="aRV-nC-iLz" secondAttribute="leading" constant="25" id="HDP-jO-yqW"/>
                             <constraint firstItem="bgX-qS-X3E" firstAttribute="centerY" secondItem="aRV-nC-iLz" secondAttribute="centerY" id="IgV-E4-jTf"/>
                             <constraint firstItem="nIs-Of-VOg" firstAttribute="leading" secondItem="aRV-nC-iLz" secondAttribute="leading" constant="25" id="bwj-3t-AYe"/>
                             <constraint firstAttribute="height" constant="100" id="dDn-0D-Wwr"/>
@@ -46,6 +56,7 @@
                 <constraints>
                     <constraint firstItem="aRV-nC-iLz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C3M-59-T3m"/>
                     <constraint firstAttribute="trailing" secondItem="aRV-nC-iLz" secondAttribute="trailing" id="GIj-cy-Dvx"/>
+                    <constraint firstItem="PJT-e3-M5h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U64-Zq-z8v"/>
                     <constraint firstAttribute="bottom" secondItem="aRV-nC-iLz" secondAttribute="bottom" id="h8v-ZP-pqA"/>
                     <constraint firstItem="aRV-nC-iLz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wOo-u9-js5"/>
                 </constraints>
@@ -54,8 +65,14 @@
             <connections>
                 <outlet property="accountImage" destination="nIs-Of-VOg" id="X4P-ZV-Z1B"/>
                 <outlet property="accountText" destination="bgX-qS-X3E" id="fUz-jd-Z61"/>
+                <outlet property="shadowView" destination="PJT-e3-M5h" id="hPf-Yq-UgR"/>
             </connections>
             <point key="canvasLocation" x="169.56521739130437" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
