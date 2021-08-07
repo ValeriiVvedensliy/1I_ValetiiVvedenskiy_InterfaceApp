@@ -2,8 +2,11 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
+    @IBOutlet weak var filterView: SearchControll!
+    
     private var users: [User]?
     private var dataSource: MockDataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -18,6 +21,7 @@ class FriendsListTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.keyboardDismissMode = .interactive
         tableView.dataSource = self
+        filterView.setUpCell(filterAccount)
     }
     
     private func registerNib() {
@@ -27,6 +31,17 @@ class FriendsListTableViewController: UITableViewController {
     private func setUpData() {
         dataSource = MockDataSource()
         users = dataSource?.getUsers()
+    }
+    
+    private func filterAccount(accountsName: String) {
+        let newUsers = users?.filter({$0.firstName.contains(accountsName)})
+        if newUsers?.count ?? 0 > 0 {
+            users = newUsers
+        }
+        else {
+            users = dataSource?.getUsers()
+        }
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source

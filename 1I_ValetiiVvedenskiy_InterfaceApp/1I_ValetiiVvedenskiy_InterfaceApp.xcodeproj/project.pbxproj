@@ -26,6 +26,9 @@
 		E06D9D1026B89B1C00C215DA /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D0F26B89B1C00C215DA /* GroupsListTableViewController.swift */; };
 		E06D9D1326B89C3D00C215DA /* MockDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D1226B89C3D00C215DA /* MockDataSource.swift */; };
 		E06D9D1526B8A4D100C215DA /* AllGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D1426B8A4D100C215DA /* AllGroupsListTableViewController.swift */; };
+		E06D9D1D26BD7B8600C215DA /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D1C26BD7B8600C215DA /* LikeControl.swift */; };
+		E06D9D2426BDA6E300C215DA /* ImageAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D2326BDA6E300C215DA /* ImageAccount.swift */; };
+		E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D2526BEF4AA00C215DA /* SearchControll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		E06D9D0F26B89B1C00C215DA /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
 		E06D9D1226B89C3D00C215DA /* MockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataSource.swift; sourceTree = "<group>"; };
 		E06D9D1426B8A4D100C215DA /* AllGroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsListTableViewController.swift; sourceTree = "<group>"; };
+		E06D9D1C26BD7B8600C215DA /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
+		E06D9D2326BDA6E300C215DA /* ImageAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAccount.swift; sourceTree = "<group>"; };
+		E06D9D2526BEF4AA00C215DA /* SearchControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 		E06D9CDC26B44CE200C215DA /* 1I_ValetiiVvedenskiy_InterfaceApp */ = {
 			isa = PBXGroup;
 			children = (
+				E06D9D2226BDA6BB00C215DA /* UIComponents */,
+				E06D9D1B26BD7B6900C215DA /* Controls */,
 				E06D9D1126B89C1B00C215DA /* Mock */,
 				E06D9CFA26B5B20200C215DA /* Models */,
 				E06D9CF526B5ADC000C215DA /* Cells */,
@@ -136,6 +144,23 @@
 				E06D9D1226B89C3D00C215DA /* MockDataSource.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		E06D9D1B26BD7B6900C215DA /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				E06D9D1C26BD7B8600C215DA /* LikeControl.swift */,
+				E06D9D2526BEF4AA00C215DA /* SearchControll.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		E06D9D2226BDA6BB00C215DA /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E06D9D2326BDA6E300C215DA /* ImageAccount.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */,
 				E06D9D1326B89C3D00C215DA /* MockDataSource.swift in Sources */,
 				E06D9D0826B8977E00C215DA /* Group.swift in Sources */,
+				E06D9D1D26BD7B8600C215DA /* LikeControl.swift in Sources */,
 				E06D9CF326B54F6900C215DA /* FriendsListTableViewController.swift in Sources */,
 				E06D9CE226B44CE200C215DA /* LoginPageViewController.swift in Sources */,
 				E06D9CDE26B44CE200C215DA /* AppDelegate.swift in Sources */,
@@ -222,6 +249,7 @@
 				E06D9D1026B89B1C00C215DA /* GroupsListTableViewController.swift in Sources */,
 				E06D9CE026B44CE200C215DA /* SceneDelegate.swift in Sources */,
 				E06D9CF826B5ADED00C215DA /* AccountViewCell.swift in Sources */,
+				E06D9D2426BDA6E300C215DA /* ImageAccount.swift in Sources */,
 				E06D9D0D26B898F900C215DA /* GroupViewCell.swift in Sources */,
 				E06D9CFC26B5B21B00C215DA /* User.swift in Sources */,
 			);

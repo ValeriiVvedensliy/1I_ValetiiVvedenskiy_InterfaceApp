@@ -14,8 +14,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "setUpView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -144,6 +144,102 @@
                   startingLineNumber = "55"
                   endingLineNumber = "55"
                   offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45C6CD86-7937-4F44-B432-2448D7FEE016"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/UIComponents/ImageAccount.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setUpCell(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F040394B-998C-4442-9D53-464D8921A6DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/UIComponents/ImageAccount.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setupBaseUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFA08FF2-24F4-47F4-A8AE-67CA3E842707"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BEF18E4-5FF7-492B-93E2-42EB7B021A3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "filterAccount(accountsName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1BEF18E4-5FF7-492B-93E2-42EB7B021A3B - ffbaae4570e247a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.FriendsListTableViewController.filterAccount(accountsName: Swift.String) -&gt; ()"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  uuid = "1BEF18E4-5FF7-492B-93E2-42EB7B021A3B - 2c377aa64d08e075"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (_I_ValetiiVvedenskiy_InterfaceApp.User) -&gt; Swift.Bool in _I_ValetiiVvedenskiy_InterfaceApp.FriendsListTableViewController.filterAccount(accountsName: Swift.String) -&gt; ()"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "37">
                </Location>
             </Locations>
          </BreakpointContent>
