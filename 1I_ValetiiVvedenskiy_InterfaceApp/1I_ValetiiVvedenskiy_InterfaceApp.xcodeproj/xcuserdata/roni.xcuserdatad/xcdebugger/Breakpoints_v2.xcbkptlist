@@ -14,8 +14,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "setUpView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/GroupsListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/GroupsListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -146,6 +146,242 @@
                   offsetFromSymbolStart = "35">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45C6CD86-7937-4F44-B432-2448D7FEE016"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/UIComponents/ImageAccount.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "setUpCell(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F040394B-998C-4442-9D53-464D8921A6DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/UIComponents/ImageAccount.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setupBaseUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFA08FF2-24F4-47F4-A8AE-67CA3E842707"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A9EAAF7-D6C2-4AF4-9F0C-9AE17E33C3CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BABDB6DD-67E9-4279-BA16-0DD221FD23D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/NewsTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6296003-A968-4335-9DC3-965AEC6587B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "NewsViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997 - 50ced5cdca0c7276"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell.news.getter : Swift.Optional&lt;_I_ValetiiVvedenskiy_InterfaceApp.News&gt;"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997 - 3466cccda481c27a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell.news.setter : Swift.Optional&lt;_I_ValetiiVvedenskiy_InterfaceApp.News&gt;"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997 - 98c63b8104a3c05b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell.news.modify : Swift.Optional&lt;_I_ValetiiVvedenskiy_InterfaceApp.News&gt;"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997 - a844a256a2dea73e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell.news.modify : Swift.Optional&lt;_I_ValetiiVvedenskiy_InterfaceApp.News&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997 - b94ae758299d4bc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; _I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "449">
+               </Location>
+               <Location
+                  uuid = "7FDB2740-1313-4BE2-A10A-541250E3E997 - 6a8169aae06112e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;_I_ValetiiVvedenskiy_InterfaceApp.NewsViewCell&gt;"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "393">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3196349-C234-47B3-9CB3-44DE87B977BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "setUpCell()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "921329BD-628D-4889-838D-7D1EDBF336F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Cells/NewsTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "setUpCell(news:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -22,6 +22,7 @@ class AllGroupsListTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.keyboardDismissMode = .interactive
         tableView.dataSource = self
+        
     }
     
     private func registerNib() {
@@ -62,6 +63,10 @@ class AllGroupsListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         groups?.count ?? 0
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

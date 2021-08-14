@@ -2,8 +2,11 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
-    private var users: [User]?
+    var users: [User]? = []
     private var dataSource: MockDataSource?
+    var firstUserCharacters = [Character]()
+    var sortUsers: [Character : [User]] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -27,22 +30,48 @@ class FriendsListTableViewController: UITableViewController {
     private func setUpData() {
         dataSource = MockDataSource()
         users = dataSource?.getUsers()
+        (firstUserCharacters, sortUsers) = sort(users!)
+    }
+    
+    func sort(_ users: [User]) -> (characters: [Character], sortedUsers: [Character : [User]]) {
+        var characters = [Character]()
+        var sortedUsers = [Character : [User]]()
+        
+        users.forEach { user in
+            guard let character = user.firstName.first else { return }
+
+            if var thisCharUsers = sortedUsers[character] {
+                thisCharUsers.append(user)
+                sortedUsers[character] = thisCharUsers
+            } else {
+                sortedUsers[character] = [user]
+                characters.append(character)
+            }
+        }
+        characters.sort()
+        return (characters, sortedUsers)
     }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        firstUserCharacters.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        users?.count ?? 0
+        let character = firstUserCharacters[section]
+        let usersCount = sortUsers[character]?.count
+        return usersCount ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let accounts = users else { fatalError() }
-        let account = accounts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountViewCell.Key) as! AccountViewCell
+        
+        let character = firstUserCharacters[indexPath.section]
+        guard let users = sortUsers[character] else { return UITableViewCell() }
+        
+        let account = users[indexPath.row]
+        
         cell.setUpCell(account.images[0], account.firstName + " " + account.lastName)
 
       return cell
@@ -56,4 +85,14 @@ class FriendsListTableViewController: UITableViewController {
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        String(firstUserCharacters[section])
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.tintColor = .clear
+        header.textLabel?.textColor = .white
+    }
 }

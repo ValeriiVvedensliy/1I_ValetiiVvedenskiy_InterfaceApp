@@ -3,7 +3,7 @@ import Foundation
 
 import UIKit
 
-class GroupsListTableViewController: UITableViewController {
+class GroupsListTableViewController: UITableViewController, UISearchBarDelegate {
     
     private var groups: [Group]?
     private var dataSource: MockDataSource?
@@ -13,6 +13,7 @@ class GroupsListTableViewController: UITableViewController {
         setUpView()
         registerNib()
         setUpData()
+        setUpSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +31,17 @@ class GroupsListTableViewController: UITableViewController {
         tableView.dataSource = self
     }
     
+    private func setUpSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 70)
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = .default
+        searchBar.placeholder = " Search Here....."
+        searchBar.sizeToFit()
+        tableView.tableHeaderView = searchBar
+    }
+    
     private func registerNib() {
         tableView.register(GroupViewCell.Nib, forCellReuseIdentifier: GroupViewCell.Key)
     }
@@ -38,8 +50,21 @@ class GroupsListTableViewController: UITableViewController {
         dataSource = MockDataSource()
     }
     
-    // MARK: - Table view data source
-
+    private func filterAccount(groupsName: String) {
+        let newGroups = groups?.filter({$0.name.contains(groupsName)})
+        if newGroups?.count ?? 0 > 0 {
+            groups = newGroups
+        }
+        else {
+            groups = dataSource?.getGroups()
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterAccount(groupsName: searchText)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -64,7 +89,7 @@ class GroupsListTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? AllGroupsListTableViewController else { return }
         destination.dataSource = self.dataSource
