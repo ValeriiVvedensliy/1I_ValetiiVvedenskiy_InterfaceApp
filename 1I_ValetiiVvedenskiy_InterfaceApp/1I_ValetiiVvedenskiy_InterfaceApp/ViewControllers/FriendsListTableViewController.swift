@@ -78,12 +78,8 @@ class FriendsListTableViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let accounts = users else { fatalError() }
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "ImageListCollectionViewController") as! ImageListCollectionViewController
-        vc.images = accounts[indexPath.row].images
-        vc.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(vc, animated: true)
+        let cell = tableView.cellForRow(at: indexPath) as? AccountViewCell
+        cell!.startAnimation(completion: completion, indexPath: indexPath)
    }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -94,5 +90,15 @@ class FriendsListTableViewController: UITableViewController {
         let header = view as! UITableViewHeaderFooterView
         header.tintColor = .clear
         header.textLabel?.textColor = .white
+    }
+    
+    private func completion(indexPath: IndexPath) {
+        guard let accounts = users else { fatalError() }
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ImageListCollectionViewController") as! ImageListCollectionViewController
+        vc.images = accounts[indexPath.section].images
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -23,4 +23,21 @@ class AccountViewCell: UITableViewCell {
         contentView.backgroundColor = UIColor.lightGray
         accountText.textColor = UIColor.white
     }
+    
+    public func startAnimation(completion: ((_ indexPath: IndexPath) -> ())?, indexPath: IndexPath) {
+        UIView.animate(withDuration: 1, animations: {
+            self.imageAccount.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }) { _ in
+            self.finishAnimation(completion: completion, indexPath: indexPath)
+        }
+    }
+    
+    private func finishAnimation(completion: ((_ indexPath: IndexPath) -> ())?, indexPath: IndexPath) {
+        UIView.animate(withDuration: 1, animations: {
+            self.imageAccount.transform = CGAffineTransform.identity
+        }) { _ in
+            guard let completion = completion else { return }
+            completion(indexPath)
+        }
+    }
 }

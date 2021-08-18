@@ -384,5 +384,164 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9E5A458-FF69-4F49-9C02-E40DBD88C10D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/GroupsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "filterAccount(groupsName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "533FCED4-C957-4340-9A44-E251C4D99ABA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/LoginPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "performSegue(withIdentifier:sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "533FCED4-C957-4340-9A44-E251C4D99ABA - ea176afda0789026"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.LoginPageViewController.shouldPerformSegue(withIdentifier: Swift.String, sender: Swift.Optional&lt;Any&gt;) -&gt; Swift.Bool"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/LoginPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "337">
+               </Location>
+               <Location
+                  uuid = "533FCED4-C957-4340-9A44-E251C4D99ABA - ea176afda0789026"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_I_ValetiiVvedenskiy_InterfaceApp.LoginPageViewController.shouldPerformSegue(withIdentifier: Swift.String, sender: Swift.Optional&lt;Any&gt;) -&gt; Swift.Bool"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/LoginPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "533FCED4-C957-4340-9A44-E251C4D99ABA - 45bc621222f52d46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in _I_ValetiiVvedenskiy_InterfaceApp.LoginPageViewController.shouldPerformSegue(withIdentifier: Swift.String, sender: Swift.Optional&lt;Any&gt;) -&gt; Swift.Bool"
+                  moduleName = "1I_ValetiiVvedenskiy_InterfaceApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/roni/Swift/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/LoginPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "41">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84565808-14B4-475A-A4E6-703421E1CADB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/LoginPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "performSegue(withIdentifier:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C9C681C-7555-4CD5-B4C6-7F35997C8AE3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/ImageListCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CAE588E-CCA5-4CEF-A2F9-8838AD8FACA6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/ImageListCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E01FE7AD-6CE2-45A2-ADCC-8FD6080F2CE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/LoginPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "animationDidStop(_:finished:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8E8F01D-6B20-4172-8E2C-F0F90D4FD882"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/ViewControllers/FriendsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "completion(indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -51,13 +51,13 @@ class GroupsListTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     private func filterAccount(groupsName: String) {
-        let newGroups = groups?.filter({$0.name.contains(groupsName)})
-        if newGroups?.count ?? 0 > 0 {
-            groups = newGroups
+        groups = dataSource?.getGroups()
+        if groupsName.isEmpty{
+            tableView.reloadData()
+            return
         }
-        else {
-            groups = dataSource?.getGroups()
-        }
+        let newGroups = groups?.filter({ $0.name.lowercased().contains(groupsName)})
+        groups = newGroups
         tableView.reloadData()
     }
     
