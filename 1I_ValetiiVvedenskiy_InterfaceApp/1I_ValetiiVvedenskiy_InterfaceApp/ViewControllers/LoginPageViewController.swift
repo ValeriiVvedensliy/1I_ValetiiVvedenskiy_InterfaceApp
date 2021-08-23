@@ -1,6 +1,6 @@
 import UIKit
 
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController, CAAnimationDelegate {
 
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -9,11 +9,14 @@ class LoginPageViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var dotsView: UIView!
+    
+    private var lay = CAReplicatorLayer()
+    private var isValid = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +38,9 @@ class LoginPageViewController: UIViewController {
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.backgroundColor = UIColor.lightGray
+        dotsView.layer.cornerRadius = 12
+        dotsView.backgroundColor = .black
+        dotsView.isHidden = true
     }
     
     private func setPlaceholder(textField: UITextField, text: String){
@@ -64,13 +70,51 @@ class LoginPageViewController: UIViewController {
         scrollView.contentInset = .zero
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    @IBAction func tapButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toNextVc", sender: nil)
+    }
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        startAnimation()
+    
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: { [self] in
+            lay.removeFromSuperlayer()
+            dotsView.isHidden = true
+        })
+    }
+    
+    private func startAnimation() {
+        dotsView.isHidden = false
+        lay = CAReplicatorLayer()
+        lay.frame = CGRect(x: 15 , y: (dotsView.bounds.width / 2) - 20 , width: 60, height: 20)
+        let circle = CALayer()
+        circle.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        circle.cornerRadius = circle.frame.width / 2
+        circle.backgroundColor = UIColor(red: 110/255.0, green: 110/255.0, blue: 110/255.0, alpha: 1).cgColor
+        lay.addSublayer(circle)
+        lay.instanceCount = 3
+        lay.instanceTransform = CATransform3DMakeTranslation(30, 0, 0)
+        let anim = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+        anim.fromValue = 1.0
+        anim.toValue = 0.2
+        anim.duration = 1
+        anim.repeatCount = .infinity
+        anim.delegate = self
+        circle.add(anim, forKey: nil)
+        lay.instanceDelay = anim.duration / Double(lay.instanceCount)
+        dotsView.layer.addSublayer(lay)
+    }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if !isLogingFieldsValid() {
             showErrorPopUp()
-            return false
+            return
         }
         
-        return true
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "TableViewController")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     private func isLogingFieldsValid() -> Bool {

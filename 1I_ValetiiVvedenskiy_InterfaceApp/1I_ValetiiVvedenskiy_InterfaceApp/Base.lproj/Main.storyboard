@@ -12,7 +12,7 @@
         <!--Login Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,9 +61,16 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
-                                                    <segue destination="4ae-rk-68g" kind="presentation" modalPresentationStyle="fullScreen" id="2YH-SA-Ho8"/>
+                                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qve-5M-Q1m"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbn-Jd-xSa">
+                                                <rect key="frame" x="137.5" y="298.5" width="100" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="Hgo-hG-V7w"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Pqc-Us-7i6"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -71,11 +78,13 @@
                                             <constraint firstItem="pS6-zw-nCJ" firstAttribute="centerX" secondItem="Yx6-xg-fWf" secondAttribute="centerX" id="DgQ-7e-bil"/>
                                             <constraint firstItem="pS6-zw-nCJ" firstAttribute="top" secondItem="U8u-3l-Eoy" secondAttribute="bottom" constant="24" id="FIP-Xn-9qV"/>
                                             <constraint firstAttribute="trailing" secondItem="pS6-zw-nCJ" secondAttribute="trailing" constant="26" id="GTH-8A-aGw"/>
+                                            <constraint firstItem="Rbn-Jd-xSa" firstAttribute="centerX" secondItem="Yx6-xg-fWf" secondAttribute="centerX" id="Vxy-Sl-DpN"/>
                                             <constraint firstItem="y0s-bR-NvF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yx6-xg-fWf" secondAttribute="top" constant="50" id="WRI-rC-CZB"/>
                                             <constraint firstItem="U8u-3l-Eoy" firstAttribute="centerY" secondItem="Yx6-xg-fWf" secondAttribute="centerY" id="ac4-74-7jD"/>
                                             <constraint firstItem="U8u-3l-Eoy" firstAttribute="leading" secondItem="Yx6-xg-fWf" secondAttribute="leading" constant="26" id="jcq-He-2Sa"/>
                                             <constraint firstItem="U8u-3l-Eoy" firstAttribute="top" secondItem="y0s-bR-NvF" secondAttribute="bottom" priority="999" constant="100" id="lZh-6A-iPL"/>
                                             <constraint firstItem="U8u-3l-Eoy" firstAttribute="centerX" secondItem="Yx6-xg-fWf" secondAttribute="centerX" id="oIa-SD-3Vk"/>
+                                            <constraint firstItem="Rbn-Jd-xSa" firstAttribute="centerY" secondItem="Yx6-xg-fWf" secondAttribute="centerY" id="rIP-3t-fOk"/>
                                             <constraint firstAttribute="trailing" secondItem="U8u-3l-Eoy" secondAttribute="trailing" constant="26" id="tHV-OR-wUC"/>
                                             <constraint firstItem="y0s-bR-NvF" firstAttribute="centerX" secondItem="Yx6-xg-fWf" secondAttribute="centerX" id="ycJ-9n-Xym"/>
                                         </constraints>
@@ -101,13 +110,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button" destination="pS6-zw-nCJ" id="l51-3m-99H"/>
+                        <outlet property="button" destination="pS6-zw-nCJ" id="wpj-OE-imh"/>
+                        <outlet property="dotsView" destination="Rbn-Jd-xSa" id="c41-dY-zAm"/>
                         <outlet property="imageView" destination="y0s-bR-NvF" id="8z7-YD-L01"/>
                         <outlet property="loginTextField" destination="WfL-0y-dY0" id="XkO-34-rLP"/>
                         <outlet property="passwordTextField" destination="6gq-Gx-fv7" id="HzY-Ua-CkC"/>
                         <outlet property="rootView" destination="Yx6-xg-fWf" id="5cA-FZ-lFI"/>
                         <outlet property="scrollView" destination="eds-8q-CDG" id="AQA-wB-FuU"/>
                         <outlet property="stackView" destination="U8u-3l-Eoy" id="9vy-9Q-8nE"/>
+                        <segue destination="4ae-rk-68g" kind="presentation" identifier="toNextVc" id="eVM-CN-dQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,9 +128,9 @@
         <!--Accounts-->
         <scene sceneID="geP-ZR-kO6">
             <objects>
-                <tableViewController id="tFX-1L-Dtl" customClass="FriendsListTableViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FriendsListTableViewController" id="tFX-1L-Dtl" customClass="FriendsListTableViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="30" sectionFooterHeight="28" id="Bnh-X4-cFt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -140,7 +151,7 @@
             <objects>
                 <tableViewController id="YBE-Jc-tFX" customClass="NewsTableViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XMx-TY-VH6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -184,7 +195,7 @@
             <objects>
                 <tableViewController id="Jfy-NJ-atd" customClass="GroupsListTableViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WZV-lV-tmh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -209,7 +220,7 @@
             <objects>
                 <tableViewController id="9xA-kH-ZnM" customClass="AllGroupsListTableViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hFC-pV-NQk" customClass="ParalaxTableView" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="9y3-AR-XtN">
@@ -246,7 +257,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="fnk-KL-Wxy">
             <objects>
-                <tabBarController id="4ae-rk-68g" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TableViewController" id="4ae-rk-68g" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uQR-fP-Oka">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -269,7 +280,7 @@
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="tFf-9O-2Yc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d0y-8i-2cW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -288,7 +299,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="n1Q-99-ML3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VCv-Oa-VFT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -309,7 +320,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UVd-r7-IQ4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

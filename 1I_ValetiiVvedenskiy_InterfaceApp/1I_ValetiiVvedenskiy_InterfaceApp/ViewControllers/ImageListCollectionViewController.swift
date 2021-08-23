@@ -49,4 +49,11 @@ class ImageListCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ImagePreviewViewController()
+        vc.imgArray = self.images ?? []
+        vc.passedContentOffset = indexPath
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

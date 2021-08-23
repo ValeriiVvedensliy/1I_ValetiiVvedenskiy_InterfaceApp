@@ -35,7 +35,7 @@ public class LikeControl: UIControl {
         creareLabel()
         setUpImage()
         stackView = UIStackView(arrangedSubviews: views)
-        stackView.spacing = -10
+        stackView.spacing = -20
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fillEqually
@@ -73,6 +73,15 @@ public class LikeControl: UIControl {
             label.textColor = .red
             button.setTitleColor(.red, for: .normal)
         }
+        startAnimation()
+    }
+    
+    private func startAnimation() {
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+           rotation.toValue = Double.pi * 2
+           rotation.duration = 1
+           rotation.isCumulative = true
+           self.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
 
