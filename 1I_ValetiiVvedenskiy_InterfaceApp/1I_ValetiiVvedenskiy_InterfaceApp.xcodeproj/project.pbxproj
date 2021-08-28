@@ -31,11 +31,14 @@
 		E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D2526BEF4AA00C215DA /* SearchControll.swift */; };
 		E06D9D2A26C1A56100C215DA /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D2926C1A56000C215DA /* NewsTableViewController.swift */; };
 		E06D9D3126C5A3E100C215DA /* ParalaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9D3026C5A3E100C215DA /* ParalaxTableView.swift */; };
+		E0A9EE7826DA3FD800908E80 /* CustomInterectiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A9EE7726DA3FD800908E80 /* CustomInterectiveTransition.swift */; };
 		E0CCD41726C7DE2600A91624 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CCD41626C7DE2600A91624 /* News.swift */; };
 		E0CCD41A26C804B000A91624 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CCD41826C804B000A91624 /* NewsTableViewCell.swift */; };
 		E0CCD41B26C804B000A91624 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CCD41926C804B000A91624 /* NewsTableViewCell.xib */; };
 		E0CCD41F26CF807900A91624 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CCD41E26CF807900A91624 /* ImagePreviewViewController.swift */; };
 		E0CCD42126CF849A00A91624 /* ImagePreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CCD42026CF849A00A91624 /* ImagePreviewCell.swift */; };
+		E0CCD42A26D3AB6300A91624 /* ImageTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CCD42926D3AB6300A91624 /* ImageTransitionAnimation.swift */; };
+		E0CCD43426D6ABE200A91624 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CCD43326D6ABE200A91624 /* Animator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,11 +68,14 @@
 		E06D9D2526BEF4AA00C215DA /* SearchControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControll.swift; sourceTree = "<group>"; };
 		E06D9D2926C1A56000C215DA /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		E06D9D3026C5A3E100C215DA /* ParalaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParalaxTableView.swift; sourceTree = "<group>"; };
+		E0A9EE7726DA3FD800908E80 /* CustomInterectiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterectiveTransition.swift; sourceTree = "<group>"; };
 		E0CCD41626C7DE2600A91624 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		E0CCD41826C804B000A91624 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		E0CCD41926C804B000A91624 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		E0CCD41E26CF807900A91624 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		E0CCD42026CF849A00A91624 /* ImagePreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewCell.swift; sourceTree = "<group>"; };
+		E0CCD42926D3AB6300A91624 /* ImageTransitionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransitionAnimation.swift; sourceTree = "<group>"; };
+		E0CCD43326D6ABE200A91624 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 		E06D9CDC26B44CE200C215DA /* 1I_ValetiiVvedenskiy_InterfaceApp */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCD43226D6A8B500A91624 /* Animations */,
+				E0CCD42826D3A82F00A91624 /* TransitionAnimation */,
 				E06D9D2F26C5A3C100C215DA /* Paralax */,
 				E06D9D2226BDA6BB00C215DA /* UIComponents */,
 				E06D9D1B26BD7B6900C215DA /* Controls */,
@@ -192,6 +200,23 @@
 			path = Paralax;
 			sourceTree = "<group>";
 		};
+		E0CCD42826D3A82F00A91624 /* TransitionAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				E0CCD42926D3AB6300A91624 /* ImageTransitionAnimation.swift */,
+			);
+			path = TransitionAnimation;
+			sourceTree = "<group>";
+		};
+		E0CCD43226D6A8B500A91624 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E0CCD43326D6ABE200A91624 /* Animator.swift */,
+				E0A9EE7726DA3FD800908E80 /* CustomInterectiveTransition.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0CCD42A26D3AB6300A91624 /* ImageTransitionAnimation.swift in Sources */,
 				E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */,
 				E06D9D1326B89C3D00C215DA /* MockDataSource.swift in Sources */,
 				E06D9D0826B8977E00C215DA /* Group.swift in Sources */,
@@ -277,6 +303,8 @@
 				E06D9CE226B44CE200C215DA /* LoginPageViewController.swift in Sources */,
 				E06D9CDE26B44CE200C215DA /* AppDelegate.swift in Sources */,
 				E06D9D0026B5C1D900C215DA /* ImageListCollectionViewController.swift in Sources */,
+				E0A9EE7826DA3FD800908E80 /* CustomInterectiveTransition.swift in Sources */,
+				E0CCD43426D6ABE200A91624 /* Animator.swift in Sources */,
 				E06D9D0526B7EA2E00C215DA /* ImageViewCell.swift in Sources */,
 				E0CCD42126CF849A00A91624 /* ImagePreviewCell.swift in Sources */,
 				E06D9D1526B8A4D100C215DA /* AllGroupsListTableViewController.swift in Sources */,

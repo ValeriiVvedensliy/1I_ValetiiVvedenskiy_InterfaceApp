@@ -16,7 +16,7 @@ class ImagePreviewCell: UICollectionViewCell, UIScrollViewDelegate {
         
         imgView = UIImageView()
         imgView.image = UIImage()
-        imgView.contentMode = .scaleAspectFit
+        imgView.contentMode = .scaleToFill
         self.addSubview(imgView)
     }
     

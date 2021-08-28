@@ -185,10 +185,11 @@
                             <outlet property="delegate" destination="0FD-39-KP9" id="ZaK-bo-3A4"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="ffO-TB-rTB"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40M-bL-xMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3182" y="-555"/>
+            <point key="canvasLocation" x="3314" y="-555"/>
         </scene>
         <!--Groups-->
         <scene sceneID="c40-gG-fE6">
