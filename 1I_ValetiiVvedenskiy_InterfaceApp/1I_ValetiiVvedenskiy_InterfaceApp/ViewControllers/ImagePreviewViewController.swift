@@ -15,10 +15,13 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
     var propertyAnimation: UIViewPropertyAnimator!
     var cell: ImagePreviewCell?
     var isCardRotation = false
+    var imageCell: UIImageView = UIImageView()
+    var interacriveTransition: CustomInterectiveTransition?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        view.isUserInteractionEnabled = true
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -68,7 +71,7 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
         cell.imgView.image = UIImage(named: imgArray[indexPath.row])
         return cell
     }
-        
+            
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = collectionView.contentOffset
         let width = collectionView.bounds.size.width
@@ -80,6 +83,7 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
         if !isCardRotation {
             isCardRotation.toggle()
             setAnimation(cell: newCell)
+            self.imageCell = newCell.imgView
         }
 
         let percent = scrollView.contentOffset.x / 100
@@ -107,3 +111,4 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
         propertyAnimation.pauseAnimation()
     }
 }
+
