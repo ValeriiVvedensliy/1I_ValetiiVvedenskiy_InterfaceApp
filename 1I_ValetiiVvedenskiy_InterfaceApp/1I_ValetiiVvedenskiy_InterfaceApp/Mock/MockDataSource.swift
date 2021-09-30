@@ -14,11 +14,11 @@ public class MockDataSource {
     
     private func setGroups() {
         MockDataSource.allGroups = [
-            Group(name: "Cars", image: "group"),
-            Group(name: "Sport", image: "group"),
-            Group(name: "Foto", image: "group"),
-            Group(name: "Life Stile", image: "group"),
-            Group(name: "Mafia", image: "group")
+            Group(name: "Cars", image: "carss"),
+            Group(name: "Sport", image: "sport"),
+            Group(name: "Photo", image: "photo"),
+            Group(name: "Life Stile", image: "life"),
+            Group(name: "Mafia", image: "mafia")
         ]
         
         MockDataSource.groups = [
@@ -28,8 +28,16 @@ public class MockDataSource {
     
     private func setUsers() {
         MockDataSource.users = [
-            User(firstName: "Albert", lastName: "Enshteinn", images: ["albert", "albert_2"]),
-            User(firstName: "Junior", lastName: "ML", images: ["junior"])
+            User(
+                firstName: "Albert",
+                 lastName: "Enshteinn",
+                 info: "родился 14 марта 1879 года",
+                 images: ["albert", "albert_2"]),
+            User(
+                firstName: "Robert",
+                lastName: "Downey",
+                info: "родился 4 апреля 1965 года",
+                images: ["junior"])
         ]
     }
     
