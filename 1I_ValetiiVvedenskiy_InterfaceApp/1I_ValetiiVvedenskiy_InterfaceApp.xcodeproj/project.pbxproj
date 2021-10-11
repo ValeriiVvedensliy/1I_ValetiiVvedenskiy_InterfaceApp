@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E024F0F2271498000004071D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024F0F1271498000004071D /* Session.swift */; };
 		E06D9CDE26B44CE200C215DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9CDD26B44CE200C215DA /* AppDelegate.swift */; };
 		E06D9CE026B44CE200C215DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9CDF26B44CE200C215DA /* SceneDelegate.swift */; };
 		E06D9CE226B44CE200C215DA /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D9CE126B44CE200C215DA /* LoginPageViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E024F0F1271498000004071D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E06D9CDA26B44CE200C215DA /* 1I_ValetiiVvedenskiy_InterfaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1I_ValetiiVvedenskiy_InterfaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06D9CDD26B44CE200C215DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E06D9CDF26B44CE200C215DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				E06D9CFB26B5B21B00C215DA /* User.swift */,
 				E06D9D0726B8977E00C215DA /* Group.swift */,
 				E0CCD41626C7DE2600A91624 /* News.swift */,
+				E024F0F1271498000004071D /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */,
+				E024F0F2271498000004071D /* Session.swift in Sources */,
 				E06D9D1326B89C3D00C215DA /* MockDataSource.swift in Sources */,
 				E06D9D0826B8977E00C215DA /* Group.swift in Sources */,
 				E06D9D2A26C1A56100C215DA /* NewsTableViewController.swift in Sources */,
