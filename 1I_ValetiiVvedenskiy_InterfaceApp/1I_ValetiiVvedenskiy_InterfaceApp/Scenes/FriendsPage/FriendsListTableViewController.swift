@@ -4,12 +4,14 @@ class FriendsListTableViewController: UITableViewController {
     
     var users: [User]? = []
     private var dataSource: MockDataSource?
+    private var vkLoader = VKDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         registerNib()
         setUpData()
+        vkLoader.loadData(.usersInfo)
     }
     
     private func setUpView() {
