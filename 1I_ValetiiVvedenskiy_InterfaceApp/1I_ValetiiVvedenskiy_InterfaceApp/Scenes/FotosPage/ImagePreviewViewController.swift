@@ -74,7 +74,8 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImagePreviewCell
-        cell.imgView.image = UIImage(named: imgArray[indexPath.row])
+        guard let url = URL(string: imgArray[indexPath.row]) else { return UICollectionViewCell() }
+        cell.imgView.load(url: url)
         return cell
     }
             

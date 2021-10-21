@@ -905,8 +905,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImagePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -921,8 +921,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImagePreviewViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "scrollViewDidEndDecelerating(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -953,8 +953,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImageListCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "navigationController(_:animationControllerFor:from:to:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -969,8 +969,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImageListCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "navigationController(_:animationControllerFor:from:to:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -979,22 +979,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4B71A7FC-6F12-42F0-BA32-9559637DCD33"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImagePreviewViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "scrollViewDidEndDecelerating(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F33344B9-8B89-4B46-A7C3-58B9136B8864"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1010,6 +994,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F33344B9-8B89-4B46-A7C3-58B9136B8864"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImagePreviewViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "5A8DD49C-F3C6-4CA8-A07A-89482FF3CFA1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1017,8 +1017,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImageListCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "changedSelectedCellImageViewSnapshot()"
             landmarkType = "7">
          </BreakpointContent>

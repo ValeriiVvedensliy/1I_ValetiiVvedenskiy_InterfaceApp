@@ -5,7 +5,6 @@ class AccountViewCell: UITableViewCell {
     
     @IBOutlet weak var accountIcon: UIImageView!
     @IBOutlet weak var accountName: UILabel!
-    @IBOutlet weak var accountInfo: UILabel!
     @IBOutlet weak var phoneIcon: UIImageView!
     @IBOutlet weak var messageIcon: UIImageView!
     public static var Key: String = "AccountViewCell"
@@ -16,17 +15,20 @@ class AccountViewCell: UITableViewCell {
         setupView()
     }
     
-    public func setUpCell(_ account: User) {
-        accountName.text = "\(account.firstName) \(account.lastName)"
-        accountInfo.text = account.info
-        accountIcon.image = UIImage(named: account.images[0] )
+    public func setUpCell(_ account: Friend) {
+        accountName.text = "\(account.userName)"
+        loadAvatar(avatar: account.userAvatar)
         accountIcon.contentMode = .scaleAspectFill
+    }
+    
+    private func loadAvatar(avatar: String) {
+        guard let imageUrl = URL(string: avatar) else { return }
+        accountIcon.load(url: imageUrl)
     }
     
     private func setupView() {
         contentView.backgroundColor = UIColor.darkGray
         accountName.textColor = UIColor.white
-        accountInfo.textColor = UIColor.white.withAlphaComponent(0.5)
         accountIcon.layer.cornerRadius = accountIcon.bounds.height / 2
     }
     

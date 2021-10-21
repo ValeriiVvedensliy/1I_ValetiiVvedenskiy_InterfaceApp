@@ -1,11 +1,11 @@
 import Foundation
+import UIKit
 
-public class Group {
+struct Group: Equatable {
     let name: String
     let image: String
-    
-    init(name: String, image: String) {
-        self.name = name
-        self.image = image
+
+    static func == (lhs: Group, rhs: Group) -> Bool {
+        return lhs.name == rhs.name
     }
 }

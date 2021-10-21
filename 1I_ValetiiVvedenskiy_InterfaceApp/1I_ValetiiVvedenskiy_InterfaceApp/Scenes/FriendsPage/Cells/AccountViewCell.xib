@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3dm-u4-LC1">
-                                <rect key="frame" x="333" y="30.5" width="20" height="19.5"/>
+                                <rect key="frame" x="333" y="30" width="20" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="MPW-aj-E6T"/>
                                     <constraint firstAttribute="width" constant="20" id="vJS-3n-bTU"/>
@@ -47,18 +48,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdP-0G-2zZ">
-                                <rect key="frame" x="86" y="42" width="212" height="13.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="keb-eE-Eib" firstAttribute="leading" secondItem="sdP-0G-2zZ" secondAttribute="trailing" id="6OD-ea-7zW"/>
                             <constraint firstItem="X6e-QO-aMo" firstAttribute="centerY" secondItem="TPt-ev-pzo" secondAttribute="centerY" id="Col-LQ-tUb"/>
                             <constraint firstItem="1ZZ-5E-aKh" firstAttribute="leading" secondItem="X6e-QO-aMo" secondAttribute="trailing" constant="8" symbolic="YES" id="F8m-wR-VL8"/>
-                            <constraint firstItem="sdP-0G-2zZ" firstAttribute="top" secondItem="1ZZ-5E-aKh" secondAttribute="bottom" constant="8" symbolic="YES" id="IxP-so-yFG"/>
                             <constraint firstItem="1ZZ-5E-aKh" firstAttribute="top" secondItem="TPt-ev-pzo" secondAttribute="top" constant="16" id="WEv-3C-hPL"/>
                             <constraint firstAttribute="height" constant="80" id="cAY-I4-JyP"/>
                             <constraint firstItem="keb-eE-Eib" firstAttribute="centerY" secondItem="TPt-ev-pzo" secondAttribute="centerY" id="hRn-pz-64Z"/>
@@ -66,7 +59,6 @@
                             <constraint firstItem="keb-eE-Eib" firstAttribute="leading" secondItem="1ZZ-5E-aKh" secondAttribute="trailing" id="mHn-5h-cRQ"/>
                             <constraint firstItem="X6e-QO-aMo" firstAttribute="leading" secondItem="TPt-ev-pzo" secondAttribute="leading" constant="18" id="smN-7l-MOc"/>
                             <constraint firstItem="3dm-u4-LC1" firstAttribute="centerY" secondItem="TPt-ev-pzo" secondAttribute="centerY" id="un2-a5-3hu"/>
-                            <constraint firstItem="sdP-0G-2zZ" firstAttribute="leading" secondItem="X6e-QO-aMo" secondAttribute="trailing" constant="8" symbolic="YES" id="urc-5q-KW1"/>
                             <constraint firstItem="3dm-u4-LC1" firstAttribute="leading" secondItem="keb-eE-Eib" secondAttribute="trailing" constant="15" id="z2R-CB-rjW"/>
                         </constraints>
                     </view>
@@ -81,7 +73,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="accountIcon" destination="X6e-QO-aMo" id="co4-ZS-hCZ"/>
-                <outlet property="accountInfo" destination="sdP-0G-2zZ" id="t4D-3O-S5r"/>
                 <outlet property="accountName" destination="1ZZ-5E-aKh" id="VNO-Vp-DTY"/>
                 <outlet property="messageIcon" destination="3dm-u4-LC1" id="BEj-sy-tKC"/>
                 <outlet property="phoneIcon" destination="keb-eE-Eib" id="h51-Nv-J8e"/>

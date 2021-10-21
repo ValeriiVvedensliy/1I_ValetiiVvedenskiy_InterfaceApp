@@ -21,7 +21,8 @@ class GroupViewCell: UITableViewCell {
     }
 
     public func setUpCell(_ imageGroup: String, _ nameGroup: String, _ buttonIsHide: Bool, _ addGroup: ((_ name: String) -> ())?) {
-        self.imageGroup.image = UIImage(named: imageGroup)
+        guard let url = URL(string: imageGroup) else { return }
+        self.imageGroup.load(url: url)
         self.nameGroup.text = nameGroup
         self.addGroup = addGroup
         self.addBtn.tintColor = .white

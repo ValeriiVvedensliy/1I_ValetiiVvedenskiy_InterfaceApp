@@ -145,56 +145,11 @@
                             <outlet property="delegate" destination="Jfy-NJ-atd" id="tML-ir-aOI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Groups" id="rNb-lN-07j">
-                        <barButtonItem key="rightBarButtonItem" title="Open search" id="hyc-p2-yqx">
-                            <connections>
-                                <segue destination="9xA-kH-ZnM" kind="show" id="qcn-fT-PBY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Groups" id="rNb-lN-07j"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-UA-6cV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2493.5999999999999" y="1056.5217391304348"/>
-        </scene>
-        <!--All Groups List Table View Controller-->
-        <scene sceneID="Dha-ao-JFr">
-            <objects>
-                <tableViewController id="9xA-kH-ZnM" customClass="AllGroupsListTableViewController" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hFC-pV-NQk" customClass="ParalaxTableView" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="9y3-AR-XtN">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milan" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-lI-glB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="5cA-IW-nVi"/>
-                                    </constraints>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Kcy-lI-glB" secondAttribute="trailing" id="1CV-85-R9n"/>
-                                <constraint firstItem="Kcy-lI-glB" firstAttribute="leading" secondItem="9y3-AR-XtN" secondAttribute="leading" id="6AR-0Z-Ueo"/>
-                                <constraint firstAttribute="bottom" secondItem="Kcy-lI-glB" secondAttribute="bottom" id="QPL-f2-NBq"/>
-                            </constraints>
-                        </view>
-                        <connections>
-                            <outlet property="bottom" destination="QPL-f2-NBq" id="KQS-i8-M4d"/>
-                            <outlet property="dataSource" destination="9xA-kH-ZnM" id="6op-YP-ujl"/>
-                            <outlet property="delegate" destination="9xA-kH-ZnM" id="cZz-95-Edj"/>
-                            <outlet property="height" destination="5cA-IW-nVi" id="QoM-44-KWJ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="ESA-Ye-zuk"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BFn-qL-Ojw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3228" y="1055.6221889055473"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fnk-KL-Wxy">
@@ -276,7 +231,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="milan" width="1050" height="590"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

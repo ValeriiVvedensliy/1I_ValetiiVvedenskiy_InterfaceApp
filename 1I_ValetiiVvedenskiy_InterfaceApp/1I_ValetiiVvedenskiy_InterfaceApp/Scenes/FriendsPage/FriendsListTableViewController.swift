@@ -2,16 +2,16 @@ import UIKit
 
 class FriendsListTableViewController: UITableViewController {
     
-    var users: [User]? = []
-    private var dataSource: MockDataSource?
     private var vkLoader = VKDataSource()
+    private var vkFriendsLoader = VKFriendsDataSource()
+    private var friends: [Friend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         registerNib()
         setUpData()
-        vkLoader.loadData(.usersInfo)
+        
     }
     
     private func setUpView() {
@@ -28,42 +28,25 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     private func setUpData() {
-        dataSource = MockDataSource()
-        users = dataSource?.getUsers()
-    }
-    
-    func sort(_ users: [User]) -> (characters: [Character], sortedUsers: [Character : [User]]) {
-        var characters = [Character]()
-        var sortedUsers = [Character : [User]]()
-        
-        users.forEach { user in
-            guard let character = user.firstName.first else { return }
-
-            if var thisCharUsers = sortedUsers[character] {
-                thisCharUsers.append(user)
-                sortedUsers[character] = thisCharUsers
-            } else {
-                sortedUsers[character] = [user]
-                characters.append(character)
-            }
-        }
-        characters.sort()
-        return (characters, sortedUsers)
+        vkLoader.loadData(.usersInfo)
+        vkFriendsLoader.loadData() { [weak self] (complition) in
+               DispatchQueue.main.async {
+                   self?.friends = complition
+                   self?.tableView.reloadData()
+               }
+           }
     }
     
     // MARK: - Table view data source
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users?.count ?? 0
+        return friends.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountViewCell.Key) as! AccountViewCell
-        
-        guard let users = self.users else { return UITableViewCell() }
-        
-        let account = users[indexPath.row]
+        let account = friends[indexPath.row]
         
         cell.setUpCell(account)
 
@@ -76,11 +59,10 @@ class FriendsListTableViewController: UITableViewController {
    }
         
     private func completion(indexPath: IndexPath) {
-        guard let accounts = users else { fatalError() }
-        
+        let account = friends[indexPath.row]
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ImageListCollectionViewController") as! ImageListCollectionViewController
-        vc.images = accounts[indexPath.row].images
+        vc.owner_id = account.owner_id
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -42,6 +42,17 @@ class LoginPageViewController: UIViewController, WKNavigationDelegate {
         webView.load(request)
     }
     
+    func removeCookie() {
+        let cookieStore = webView.configuration.websiteDataStore.httpCookieStore
+
+        cookieStore.getAllCookies {
+            cookies in
+            for cookie in cookies {
+                cookieStore.delete(cookie)
+            }
+        }
+    }
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
 
         guard let url = navigationResponse.response.url,

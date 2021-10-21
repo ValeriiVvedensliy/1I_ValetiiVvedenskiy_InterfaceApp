@@ -6,7 +6,7 @@ import UIKit
 class AllGroupsListTableViewController: UITableViewController {
     
     private var groups: [Group]?
-    public var dataSource: MockDataSource?
+   // public var dataSource: MockDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +30,12 @@ class AllGroupsListTableViewController: UITableViewController {
     }
     
     private func setUpData() {
-        groups = dataSource?.getAllGroups()
+       // groups = dataSource?.getAllGroups()
     }
     
     private func addGroup(name: String) {
-        let isAdded = dataSource?.addGroupByUser(groupName: name)
-        showPopUpInfo(isAdded: isAdded ?? false)
+       // let isAdded = dataSource?.addGroupByUser(groupName: name)
+       // showPopUpInfo(isAdded: isAdded ?? false)
     }
     
     private func showPopUpInfo(isAdded: Bool) {

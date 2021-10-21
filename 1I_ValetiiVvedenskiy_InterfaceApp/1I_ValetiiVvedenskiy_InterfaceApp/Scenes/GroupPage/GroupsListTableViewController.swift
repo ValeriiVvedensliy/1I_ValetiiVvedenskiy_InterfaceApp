@@ -3,23 +3,16 @@ import Foundation
 
 import UIKit
 
-class GroupsListTableViewController: UITableViewController, UISearchBarDelegate {
+class GroupsListTableViewController: UITableViewController {
     
     private var groups: [Group]?
-    private var dataSource: MockDataSource?
+    private var dataSource = VKGroupsDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
         registerNib()
         setUpData()
-        setUpSearchBar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        groups = dataSource?.getGroups()
-        tableView.reloadData()
     }
     
     private func setUpView() {
@@ -30,39 +23,18 @@ class GroupsListTableViewController: UITableViewController, UISearchBarDelegate 
         tableView.keyboardDismissMode = .interactive
         tableView.dataSource = self
     }
-    
-    private func setUpSearchBar() {
-        let searchBar = UISearchBar()
-        searchBar.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 70)
-        searchBar.delegate = self
-        searchBar.showsCancelButton = true
-        searchBar.searchBarStyle = .default
-        searchBar.placeholder = " Search Here....."
-        searchBar.sizeToFit()
-        tableView.tableHeaderView = searchBar
-    }
-    
+        
     private func registerNib() {
         tableView.register(GroupViewCell.Nib, forCellReuseIdentifier: GroupViewCell.Key)
     }
     
     private func setUpData() {
-        dataSource = MockDataSource()
-    }
-    
-    private func filterAccount(groupsName: String) {
-        groups = dataSource?.getGroups()
-        if groupsName.isEmpty{
-            tableView.reloadData()
-            return
+        dataSource.loadData() { [weak self] (complition) in
+            DispatchQueue.main.async {
+                self?.groups = complition
+                self?.tableView.reloadData()
+            }
         }
-        let newGroups = groups?.filter({ $0.name.lowercased().contains(groupsName)})
-        groups = newGroups
-        tableView.reloadData()
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterAccount(groupsName: searchText)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,18 +52,5 @@ class GroupsListTableViewController: UITableViewController, UISearchBarDelegate 
         cell.setUpCell(group.image, group.name, true, nil)
 
       return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            groups = dataSource?.deleteGroupByUser(idx: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            tableView.reloadData()
-        }
-    }
-        
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? AllGroupsListTableViewController else { return }
-        destination.dataSource = self.dataSource
     }
 }

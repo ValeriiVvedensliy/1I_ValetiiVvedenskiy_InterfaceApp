@@ -3,11 +3,15 @@ import UIKit
 
 class ImageListCollectionViewController: UICollectionViewController, UINavigationControllerDelegate {
     
-    public var images: [String]?
+    public var owner_id = ""
     var selectedCell: ImageViewCell?
     var selectedCellImageViewSnapshot: UIView?
     var animator: Animator?
     let interacriveTransition = CustomInterectiveTransition()
+    
+    private var images: [String]?
+    private var imageSource = VKPhotoDataSource()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +20,7 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
         setUpNavigationBarTitle()
         setLayout()
         registerNib()
+        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,6 +58,15 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
         collectionView.register(ImageViewCell.Nib, forCellWithReuseIdentifier: ImageViewCell.Key)
     }
     
+    private func loadData() {
+        imageSource.loadData(owner_id: owner_id) { [weak self] (complition) in
+             DispatchQueue.main.async {
+                 self?.images = complition
+                 self?.collectionView.reloadData()
+             }
+         }
+    }
+    
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -80,7 +94,8 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
         vc.imgArray = self.images ?? []
         vc.passedContentOffset = indexPath
         vc.imageCell = UIImageView(frame: collectionView.layer.bounds)
-        vc.imageCell.image = UIImage(named: (images?[indexPath.row])!)
+        guard let url = URL(string: images?[indexPath.row] ?? "") else { return }
+        vc.imageCell.load(url: url)
         vc.interacriveTransition = interacriveTransition
         vc.changedSelectedCellImageViewSnapshot = changedSelectedCellImageViewSnapshot
         

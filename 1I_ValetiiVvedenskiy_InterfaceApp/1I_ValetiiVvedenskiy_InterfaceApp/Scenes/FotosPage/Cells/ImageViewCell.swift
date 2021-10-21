@@ -37,7 +37,9 @@ class ImageViewCell: UICollectionViewCell {
     }
     
     public func setUpCell(_ accountImage: String) {
-        self.accountImage.image = UIImage(named: accountImage)
+        guard let url = URL(string: accountImage) else { return }
+
+        self.accountImage.load(url: url)
     }
     
     private func startAnimation() {
