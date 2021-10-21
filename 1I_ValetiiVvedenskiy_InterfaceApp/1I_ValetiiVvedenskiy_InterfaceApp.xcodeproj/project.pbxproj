@@ -13,6 +13,9 @@
 		E0081A042720B34F0055F1CD /* VKPhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0081A032720B34F0055F1CD /* VKPhotoDataSource.swift */; };
 		E0081A0627216A720055F1CD /* VKGroupsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0081A0527216A720055F1CD /* VKGroupsDataSource.swift */; };
 		E024F0F2271498000004071D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024F0F1271498000004071D /* Session.swift */; };
+		E04E17FE2721F91F0082F529 /* RPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E17FB2721F91F0082F529 /* RPhoto.swift */; };
+		E04E17FF2721F91F0082F529 /* RFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E17FC2721F91F0082F529 /* RFriend.swift */; };
+		E04E18002721F91F0082F529 /* RGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E17FD2721F91F0082F529 /* RGroup.swift */; };
 		E04F4BCC2716DF64004085BB /* VKDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F4BCB2716DF64004085BB /* VKDataSource.swift */; };
 		E04F4BCE2716DFC9004085BB /* SettingsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F4BCD2716DFC9004085BB /* SettingsApi.swift */; };
 		E04F4BD1271C4FEE004085BB /* UserJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F4BD0271C4FEE004085BB /* UserJson.swift */; };
@@ -69,6 +72,9 @@
 		E0081A032720B34F0055F1CD /* VKPhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPhotoDataSource.swift; sourceTree = "<group>"; };
 		E0081A0527216A720055F1CD /* VKGroupsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroupsDataSource.swift; sourceTree = "<group>"; };
 		E024F0F1271498000004071D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E04E17FB2721F91F0082F529 /* RPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPhoto.swift; sourceTree = "<group>"; };
+		E04E17FC2721F91F0082F529 /* RFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFriend.swift; sourceTree = "<group>"; };
+		E04E17FD2721F91F0082F529 /* RGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGroup.swift; sourceTree = "<group>"; };
 		E04F4BCB2716DF64004085BB /* VKDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDataSource.swift; sourceTree = "<group>"; };
 		E04F4BCD2716DFC9004085BB /* SettingsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApi.swift; sourceTree = "<group>"; };
 		E04F4BD0271C4FEE004085BB /* UserJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJson.swift; sourceTree = "<group>"; };
@@ -147,9 +153,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E04E17F92721F91F0082F529 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E04E17FA2721F91F0082F529 /* Models */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		E04E17FA2721F91F0082F529 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E04E17FB2721F91F0082F529 /* RPhoto.swift */,
+				E04E17FC2721F91F0082F529 /* RFriend.swift */,
+				E04E17FD2721F91F0082F529 /* RGroup.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E04F4BCA2716DF45004085BB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E04E17F92721F91F0082F529 /* Realm */,
 				E04F4BCF271C4F81004085BB /* Models */,
 				E04F4BCB2716DF64004085BB /* VKDataSource.swift */,
 				E04F4BCD2716DFC9004085BB /* SettingsApi.swift */,
@@ -492,6 +517,7 @@
 			files = (
 				E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */,
 				E04F4BD5271C5472004085BB /* Groups.swift in Sources */,
+				E04E17FF2721F91F0082F529 /* RFriend.swift in Sources */,
 				E024F0F2271498000004071D /* Session.swift in Sources */,
 				E04F4BD1271C4FEE004085BB /* UserJson.swift in Sources */,
 				E06D9D0826B8977E00C215DA /* Group.swift in Sources */,
@@ -521,9 +547,11 @@
 				E06D9D1526B8A4D100C215DA /* AllGroupsListTableViewController.swift in Sources */,
 				E06D9D1026B89B1C00C215DA /* GroupsListTableViewController.swift in Sources */,
 				E06D9CE026B44CE200C215DA /* SceneDelegate.swift in Sources */,
+				E04E17FE2721F91F0082F529 /* RPhoto.swift in Sources */,
 				E06D9CF826B5ADED00C215DA /* AccountViewCell.swift in Sources */,
 				E0CCD41F26CF807900A91624 /* ImagePreviewViewController.swift in Sources */,
 				E0718D6026EFC8E2003560A9 /* FooterViewCell.swift in Sources */,
+				E04E18002721F91F0082F529 /* RGroup.swift in Sources */,
 				E06D9D0D26B898F900C215DA /* GroupViewCell.swift in Sources */,
 				E0CCD41726C7DE2600A91624 /* News.swift in Sources */,
 				E09C22782705ECCD004D20C6 /* ImagesViewCell.swift in Sources */,
