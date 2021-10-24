@@ -15,19 +15,24 @@ struct Photo: Decodable {
         var items: [Items]
 
         struct Items: Decodable {
-            var album_id: Int
-            var date: Int
-            var id: Int
-            var owner_id: Int
-            var has_tags: Bool
+            var ownerID: Int
             var sizes: [Sizes]
-            var text: String
+            
+            private enum CodingKeys: String, CodingKey {
+                case ownerID = "owner_id"
+                case sizes
+            }
+            
+            
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+
+                ownerID = try container.decode(Int.self, forKey: .ownerID)
+                sizes = try container.decode([Sizes].self, forKey: .sizes)
+            }
 
             struct Sizes: Decodable {
-                var height: Int
                 var url: String
-                var type: String
-                var width: Int
             }
         }
     }

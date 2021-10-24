@@ -1,11 +1,10 @@
 import Foundation
-
-
+import RealmSwift
 import UIKit
 
 class GroupsListTableViewController: UITableViewController {
     
-    private var groups: [Group]?
+    private var groups: [RGroup]?
     private var dataSource = VKGroupsDataSource()
     
     override func viewDidLoad() {
@@ -29,11 +28,22 @@ class GroupsListTableViewController: UITableViewController {
     }
     
     private func setUpData() {
-        dataSource.loadData() { [weak self] (complition) in
-            DispatchQueue.main.async {
-                self?.groups = complition
-                self?.tableView.reloadData()
-            }
+        loadGroupsFromRealm()
+        
+        dataSource.loadData() { [weak self] () in
+            self?.loadGroupsFromRealm()
+        }
+    }
+    
+    func loadGroupsFromRealm() {
+        do {
+            let realm = try Realm()
+            let groupsFromRealm = realm.objects(RGroup.self)
+            groups = Array(groupsFromRealm)
+            guard groupsFromRealm.count != 0 else { return }
+            tableView.reloadData()
+        } catch {
+            print(error)
         }
     }
     
@@ -49,7 +59,7 @@ class GroupsListTableViewController: UITableViewController {
         guard let groups = groups else { fatalError() }
         let group = groups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: GroupViewCell.Key) as! GroupViewCell
-        cell.setUpCell(group.image, group.name, true, nil)
+        cell.setUpCell(group.groupLogo, group.groupName, true, nil)
 
       return cell
     }

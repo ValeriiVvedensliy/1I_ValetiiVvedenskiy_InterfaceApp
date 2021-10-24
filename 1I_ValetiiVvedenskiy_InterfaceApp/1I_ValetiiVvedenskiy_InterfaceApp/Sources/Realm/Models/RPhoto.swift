@@ -10,9 +10,11 @@ import RealmSwift
 
 class RPhoto: Object {
     @objc dynamic var photo: String = ""
+    @objc dynamic var ownerID: String  = ""
 
-    init(photo: String) {
+    init(photo: String, ownerID: String) {
         self.photo = photo
+        self.ownerID = ownerID
     }
 
     required override init() {

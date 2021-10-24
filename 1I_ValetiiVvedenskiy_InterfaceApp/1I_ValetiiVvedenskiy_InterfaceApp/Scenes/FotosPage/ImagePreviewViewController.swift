@@ -10,7 +10,7 @@ import Foundation
 class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var collectionView: UICollectionView!
-    var imgArray = [String]()
+    var imgArray = [RPhoto]()
     var passedContentOffset: IndexPath!
     var propertyAnimation: UIViewPropertyAnimator!
     var cell: ImagePreviewCell?
@@ -74,7 +74,7 @@ class ImagePreviewViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImagePreviewCell
-        guard let url = URL(string: imgArray[indexPath.row]) else { return UICollectionViewCell() }
+        guard let url = URL(string: imgArray[indexPath.row].photo) else { return UICollectionViewCell() }
         cell.imgView.load(url: url)
         return cell
     }

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 
 class ImageListCollectionViewController: UICollectionViewController, UINavigationControllerDelegate {
@@ -8,8 +9,7 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
     var selectedCellImageViewSnapshot: UIView?
     var animator: Animator?
     let interacriveTransition = CustomInterectiveTransition()
-    
-    private var images: [String]?
+    var collectionPhotos: [RPhoto] = []
     private var imageSource = VKPhotoDataSource()
     
     
@@ -59,12 +59,22 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
     }
     
     private func loadData() {
-        imageSource.loadData(owner_id: owner_id) { [weak self] (complition) in
-             DispatchQueue.main.async {
-                 self?.images = complition
-                 self?.collectionView.reloadData()
-             }
-         }
+        loadPhotosFromRealm()
+        imageSource.loadData(ownerID: owner_id) { [weak self] () in
+            self?.loadPhotosFromRealm()
+        }
+    }
+    
+    func loadPhotosFromRealm() {
+        do {
+            let realm = try Realm()
+            let photosFromRealm = realm.objects(RPhoto.self).filter("ownerID == %@", owner_id)
+            collectionPhotos = Array(photosFromRealm)
+            guard collectionPhotos.count != 0 else { return }
+            collectionView.reloadData()
+        } catch {
+            print(error)
+        }
     }
     
     // MARK: UICollectionViewDataSource
@@ -75,13 +85,12 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images?.count ?? 0
+        return collectionPhotos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.Key, for: indexPath) as! ImageViewCell
-        guard let images = images else { return UICollectionViewCell() }
-        cell.setUpCell(images[indexPath.row])
+        cell.setUpCell(collectionPhotos[indexPath.row].photo)
         
         return cell
     }
@@ -91,10 +100,10 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
         selectedCellImageViewSnapshot = selectedCell?.accountImage.snapshotView(afterScreenUpdates: false)
         
         let vc = ImagePreviewViewController()
-        vc.imgArray = self.images ?? []
+        vc.imgArray = self.collectionPhotos
         vc.passedContentOffset = indexPath
         vc.imageCell = UIImageView(frame: collectionView.layer.bounds)
-        guard let url = URL(string: images?[indexPath.row] ?? "") else { return }
+        guard let url = URL(string: collectionPhotos[indexPath.row].photo) else { return }
         vc.imageCell.load(url: url)
         vc.interacriveTransition = interacriveTransition
         vc.changedSelectedCellImageViewSnapshot = changedSelectedCellImageViewSnapshot

@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
 class VKFriendsDataSource {
-    func loadData(complition: @escaping ([Friend]) -> Void ) {
+    let dataSource = DataSource()
+    func loadData(complition: @escaping () -> Void ) {
 
         let configuration = URLSessionConfiguration.default
         let session =  URLSession(configuration: configuration)
@@ -29,17 +31,20 @@ class VKFriendsDataSource {
             
             do {
                 let arrayFriends = try JSONDecoder().decode(Friends.self, from: data)
-                var fullNamesFriends: [Friend] = []
+                var fullNamesFriends: [RFriend] = []
                 for i in 0...arrayFriends.response.items.count-1 {
                     let name = ((arrayFriends.response.items[i].first_name) + " " + (arrayFriends.response.items[i].last_name))
                     let avatar = arrayFriends.response.items[i].photo_50
                     let id = String(arrayFriends.response.items[i].id)
-                    fullNamesFriends.append(Friend.init(userName: name, userAvatar: avatar, owner_id: id))
+                    fullNamesFriends.append(RFriend.init(userName: name, userAvatar: avatar, ownerID: id))
                 }
-                complition(fullNamesFriends)
+                DispatchQueue.main.async {
+                    self.dataSource.saveFriendsToRealm(fullNamesFriends)
+                    complition()
+                }
             } catch let error {
                 print(error)
-                complition([])
+                complition()
             }
         }
         task.resume()

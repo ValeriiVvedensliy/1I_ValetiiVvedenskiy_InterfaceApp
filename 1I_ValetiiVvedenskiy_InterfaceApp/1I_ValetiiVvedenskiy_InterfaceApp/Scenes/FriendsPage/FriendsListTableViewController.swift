@@ -1,10 +1,11 @@
 import UIKit
+import RealmSwift
 
 class FriendsListTableViewController: UITableViewController {
     
     private var vkLoader = VKDataSource()
     private var vkFriendsLoader = VKFriendsDataSource()
-    private var friends: [Friend] = []
+    private var friends: [RFriend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,24 @@ class FriendsListTableViewController: UITableViewController {
     
     private func setUpData() {
         vkLoader.loadData(.usersInfo)
-        vkFriendsLoader.loadData() { [weak self] (complition) in
-               DispatchQueue.main.async {
-                   self?.friends = complition
-                   self?.tableView.reloadData()
-               }
-           }
+
+        loadFriendsFromRealm()
+        vkFriendsLoader.loadData() { [weak self] () in
+                self?.loadFriendsFromRealm()
+        }
+    }
+    
+    func loadFriendsFromRealm() {
+        do {
+            let realm = try Realm()
+            let friendsFromRealm = realm.objects(RFriend.self)
+            friends = Array(friendsFromRealm)
+            
+            guard friends.count != 0 else { return } // проверка, что в реалме что-то есть
+            tableView.reloadData()
+        } catch {
+            print(error)
+        }
     }
     
     // MARK: - Table view data source
@@ -62,7 +75,7 @@ class FriendsListTableViewController: UITableViewController {
         let account = friends[indexPath.row]
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "ImageListCollectionViewController") as! ImageListCollectionViewController
-        vc.owner_id = account.owner_id
+        vc.owner_id = account.ownerID
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }

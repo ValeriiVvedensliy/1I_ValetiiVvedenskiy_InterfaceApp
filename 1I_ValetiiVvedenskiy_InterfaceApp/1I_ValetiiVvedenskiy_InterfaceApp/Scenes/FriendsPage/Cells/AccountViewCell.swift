@@ -15,7 +15,7 @@ class AccountViewCell: UITableViewCell {
         setupView()
     }
     
-    public func setUpCell(_ account: Friend) {
+    public func setUpCell(_ account: RFriend) {
         accountName.text = "\(account.userName)"
         loadAvatar(avatar: account.userAvatar)
         accountIcon.contentMode = .scaleAspectFill

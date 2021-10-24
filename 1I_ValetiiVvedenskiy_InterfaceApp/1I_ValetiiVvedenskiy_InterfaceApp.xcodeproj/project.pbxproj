@@ -16,6 +16,7 @@
 		E04E17FE2721F91F0082F529 /* RPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E17FB2721F91F0082F529 /* RPhoto.swift */; };
 		E04E17FF2721F91F0082F529 /* RFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E17FC2721F91F0082F529 /* RFriend.swift */; };
 		E04E18002721F91F0082F529 /* RGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E17FD2721F91F0082F529 /* RGroup.swift */; };
+		E04E18022725CFC20082F529 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E18012725CFC20082F529 /* DataSource.swift */; };
 		E04F4BCC2716DF64004085BB /* VKDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F4BCB2716DF64004085BB /* VKDataSource.swift */; };
 		E04F4BCE2716DFC9004085BB /* SettingsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F4BCD2716DFC9004085BB /* SettingsApi.swift */; };
 		E04F4BD1271C4FEE004085BB /* UserJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F4BD0271C4FEE004085BB /* UserJson.swift */; };
@@ -75,6 +76,7 @@
 		E04E17FB2721F91F0082F529 /* RPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPhoto.swift; sourceTree = "<group>"; };
 		E04E17FC2721F91F0082F529 /* RFriend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFriend.swift; sourceTree = "<group>"; };
 		E04E17FD2721F91F0082F529 /* RGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGroup.swift; sourceTree = "<group>"; };
+		E04E18012725CFC20082F529 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E04F4BCB2716DF64004085BB /* VKDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDataSource.swift; sourceTree = "<group>"; };
 		E04F4BCD2716DFC9004085BB /* SettingsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApi.swift; sourceTree = "<group>"; };
 		E04F4BD0271C4FEE004085BB /* UserJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJson.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E04E17FA2721F91F0082F529 /* Models */,
+				E04E18012725CFC20082F529 /* DataSource.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04E18022725CFC20082F529 /* DataSource.swift in Sources */,
 				E06D9D2626BEF4AA00C215DA /* SearchControll.swift in Sources */,
 				E04F4BD5271C5472004085BB /* Groups.swift in Sources */,
 				E04E17FF2721F91F0082F529 /* RFriend.swift in Sources */,
