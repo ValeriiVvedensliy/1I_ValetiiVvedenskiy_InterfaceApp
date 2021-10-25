@@ -953,8 +953,8 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImageListCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "navigationController(_:animationControllerFor:from:to:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -969,9 +969,9 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImageListCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "navigationController(_:animationControllerFor:from:to:)"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "changedSelectedCellImageViewSnapshot()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1017,9 +1017,9 @@
             filePath = "1I_ValetiiVvedenskiy_InterfaceApp/Scenes/FotosPage/ImageListCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "changedSelectedCellImageViewSnapshot()"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

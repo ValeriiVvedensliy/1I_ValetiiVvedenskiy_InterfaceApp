@@ -6,6 +6,17 @@ class GroupsListTableViewController: UITableViewController {
     
     private var groups: [RGroup]?
     private var dataSource = VKGroupsDataSource()
+    private var notificationToken: NotificationToken?
+
+    var realm: Realm = {
+        let configrealm = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: configrealm)
+        return realm
+    }()
+
+    lazy var groupsFromRealm: Results<RGroup> = {
+        return realm.objects(RGroup.self)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +39,27 @@ class GroupsListTableViewController: UITableViewController {
     }
     
     private func setUpData() {
-        loadGroupsFromRealm()
-        
-        dataSource.loadData() { [weak self] () in
-            self?.loadGroupsFromRealm()
-        }
+        subscribeToNotificationRealm()
+        dataSource.loadData()
     }
     
+    private func subscribeToNotificationRealm() {
+        notificationToken = groupsFromRealm.observe { [weak self] (changes) in
+            switch changes {
+            case .initial:
+                self?.loadGroupsFromRealm()
+            case .update:
+                self?.loadGroupsFromRealm()
+            case let .error(error):
+                print(error)
+            }
+        }
+    }
+        
     func loadGroupsFromRealm() {
-        do {
-            let realm = try Realm()
-            let groupsFromRealm = realm.objects(RGroup.self)
             groups = Array(groupsFromRealm)
             guard groupsFromRealm.count != 0 else { return }
             tableView.reloadData()
-        } catch {
-            print(error)
-        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
