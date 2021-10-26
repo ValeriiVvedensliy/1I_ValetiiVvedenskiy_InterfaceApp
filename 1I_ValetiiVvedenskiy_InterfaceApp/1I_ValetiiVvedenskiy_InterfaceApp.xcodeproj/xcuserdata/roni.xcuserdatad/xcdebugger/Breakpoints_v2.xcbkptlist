@@ -971,7 +971,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "changedSelectedCellImageViewSnapshot()"
+            landmarkName = "navigationController(_:animationControllerFor:from:to:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1019,7 +1019,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
             endingLineNumber = "131"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkName = "changedSelectedCellImageViewSnapshot()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
