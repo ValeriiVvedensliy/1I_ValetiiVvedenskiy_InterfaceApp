@@ -3,7 +3,6 @@ import RealmSwift
 
 class FriendsListTableViewController: UITableViewController {
     
-    private var vkLoader = VKDataSource()
     private var vkFriendsLoader = VKFriendsDataSource()
     private var friends: [RFriend] = []
     var notificationToken: NotificationToken?
@@ -40,8 +39,6 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     private func setUpData() {
-        vkLoader.loadData(.usersInfo)
-
         subscribeToNotificationRealm()
         vkFriendsLoader.loadData()
     }

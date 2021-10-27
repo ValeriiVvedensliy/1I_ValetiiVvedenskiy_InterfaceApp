@@ -2,14 +2,13 @@ import UIKit
 
 class GroupViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageGroup: UIImageView!
-    @IBOutlet weak var nameGroup: UILabel!
-    @IBOutlet weak var addBtn: UIButton!
-    @IBOutlet weak var rootView: UIView!
+    @IBOutlet private var imageGroup: UIImageView!
+    @IBOutlet private var nameGroup: UILabel!
+    @IBOutlet private var addBtn: UIButton!
+    @IBOutlet private var rootView: UIView!
     
-    public static var Key: String = "GroupViewCell"
-    static var Nib: UINib = UINib.init(nibName: "GroupViewCell", bundle: Bundle(for:  GroupViewCell.self))
-    var addGroup: ((_ name: String) -> ())?
+    static var Key = String(describing: GroupViewCell.self)
+    static var Nib = UINib(nibName: Key, bundle: Bundle(for: GroupViewCell.self))
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,17 +19,12 @@ class GroupViewCell: UITableViewCell {
         self.backgroundColor = .clear
     }
 
-    public func setUpCell(_ imageGroup: String, _ nameGroup: String, _ buttonIsHide: Bool, _ addGroup: ((_ name: String) -> ())?) {
+    public func setUpCell(_ imageGroup: String, _ nameGroup: String, _ buttonIsHide: Bool) {
         guard let url = URL(string: imageGroup) else { return }
         self.imageGroup.load(url: url)
         self.nameGroup.text = nameGroup
-        self.addGroup = addGroup
         self.addBtn.tintColor = .white
         self.addBtn.isHidden = buttonIsHide
-    }
-    
-    @IBAction func addGroup(_ sender: Any) {
-        guard let addgroup = addGroup else { return }
-        addgroup(nameGroup.text ?? "")
+        self.isUserInteractionEnabled = false
     }
 }

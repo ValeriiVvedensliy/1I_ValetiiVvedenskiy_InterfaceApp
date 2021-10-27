@@ -74,7 +74,7 @@ class GroupsListTableViewController: UITableViewController {
         guard let groups = groups else { fatalError() }
         let group = groups[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: GroupViewCell.Key) as! GroupViewCell
-        cell.setUpCell(group.groupLogo, group.groupName, true, nil)
+        cell.setUpCell(group.groupLogo, group.groupName, true)
 
       return cell
     }

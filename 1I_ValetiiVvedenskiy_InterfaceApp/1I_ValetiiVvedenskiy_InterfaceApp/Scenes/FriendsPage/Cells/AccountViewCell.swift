@@ -3,12 +3,13 @@ import UIKit
 class AccountViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var accountIcon: UIImageView!
-    @IBOutlet weak var accountName: UILabel!
-    @IBOutlet weak var phoneIcon: UIImageView!
-    @IBOutlet weak var messageIcon: UIImageView!
-    public static var Key: String = "AccountViewCell"
-    static var Nib: UINib = UINib.init(nibName: "AccountViewCell", bundle: Bundle(for:  AccountViewCell.self))
+    @IBOutlet private var accountIcon: UIImageView!
+    @IBOutlet private var accountName: UILabel!
+    @IBOutlet private var phoneIcon: UIImageView!
+    @IBOutlet private var messageIcon: UIImageView!
+
+    static var Key = String(describing: AccountViewCell.self)
+    static var Nib = UINib(nibName: Key, bundle: Bundle(for: AccountViewCell.self))
     
     override func awakeFromNib() {
         super.awakeFromNib()
