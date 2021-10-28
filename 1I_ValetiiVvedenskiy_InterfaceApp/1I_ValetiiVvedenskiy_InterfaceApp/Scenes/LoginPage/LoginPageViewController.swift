@@ -79,7 +79,6 @@ class LoginPageViewController: UIViewController, WKNavigationDelegate {
                session.userID = Int(userID)!
 
                decisionHandler(.cancel)
-               writeUserToFirebase(userID)
 
                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                let vc = storyBoard.instantiateViewController(withIdentifier: "TableViewController")
@@ -91,22 +90,5 @@ class LoginPageViewController: UIViewController, WKNavigationDelegate {
                webView.load(URLRequest(url: URL(string: "https://vk.com/")!))
            }
        }
-    
-    private func writeUserToFirebase(_ userID: String){
-        let database = Database.database()
-        let ref: DatabaseReference = database.reference(withPath: "All logged users")
-        
-        ref.observe(.value) { snapshot in
-            let users = snapshot.children.compactMap { $0 as? DataSnapshot }
-            let keys = users.compactMap { $0.key }
-            
-            guard keys.contains(userID) == false else {
-                ref.removeAllObservers()
-                return
-            }
-            
-            ref.child(userID).setValue(userID)
-        }
-    }
 }
 
