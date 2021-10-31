@@ -10,7 +10,7 @@ import RealmSwift
 
 class VKFriendsDataSource {
     let dataSource = DataSource()
-    func loadData(complition: @escaping () -> Void ) {
+    func loadData() {
 
         let configuration = URLSessionConfiguration.default
         let session =  URLSession(configuration: configuration)
@@ -40,11 +40,9 @@ class VKFriendsDataSource {
                 }
                 DispatchQueue.main.async {
                     self.dataSource.saveFriendsToRealm(fullNamesFriends)
-                    complition()
                 }
             } catch let error {
                 print(error)
-                complition()
             }
         }
         task.resume()

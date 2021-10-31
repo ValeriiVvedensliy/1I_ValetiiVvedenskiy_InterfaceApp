@@ -17,7 +17,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        rootView.layer.cornerRadius = 6
+        rootView.layer.masksToBounds = true
         rootView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFill
     }

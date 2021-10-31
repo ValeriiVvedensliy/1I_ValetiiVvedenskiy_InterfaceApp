@@ -21,22 +21,11 @@ class ImagesViewCell: UITableViewCell {
         contentView.backgroundColor = .darkGray
         rootView.backgroundColor = .darkGray
         collectionView.backgroundColor = .darkGray
-        setLayout()
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         registerNib()
     }
     
     private func registerNib() {
         collectionView.register(ImageCollectionViewCell.Nib, forCellWithReuseIdentifier: ImageCollectionViewCell.Key)
-    }
-    
-    private func setLayout() {
-        let screenSize = collectionView.bounds
-        let screenWidth = screenSize.width
-
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: screenWidth / 3, height: screenWidth / 3)
-        collectionView.collectionViewLayout = layout
-        collectionView.collectionViewLayout = layout
     }
 }

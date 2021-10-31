@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,8 +25,6 @@
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="IJH-fs-u2n"/>
-                            <constraint firstAttribute="height" constant="100" id="VwS-Xh-0eQ"/>
                             <constraint firstAttribute="bottom" secondItem="NtC-ML-8T5" secondAttribute="bottom" id="XZI-62-Ngi"/>
                             <constraint firstAttribute="trailing" secondItem="NtC-ML-8T5" secondAttribute="trailing" id="Z2M-3Z-Qyy"/>
                             <constraint firstItem="NtC-ML-8T5" firstAttribute="top" secondItem="87Y-sa-ttD" secondAttribute="top" id="te1-7z-bhw"/>
@@ -37,9 +35,11 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="87Y-sa-ttD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CKy-fK-Sw7"/>
                 <constraint firstItem="87Y-sa-ttD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Fgm-AL-MGh"/>
                 <constraint firstItem="87Y-sa-ttD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="L2v-tJ-o99"/>
                 <constraint firstAttribute="trailing" secondItem="87Y-sa-ttD" secondAttribute="trailing" id="cdX-30-fqx"/>
+                <constraint firstAttribute="bottom" secondItem="87Y-sa-ttD" secondAttribute="bottom" id="gdU-vP-6U1"/>
             </constraints>
             <size key="customSize" width="100" height="120"/>
             <connections>

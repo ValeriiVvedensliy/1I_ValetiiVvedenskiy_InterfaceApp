@@ -1,5 +1,6 @@
 import UIKit
 import WebKit
+import FirebaseDatabase
 
 class LoginPageViewController: UIViewController, WKNavigationDelegate {
 
@@ -89,8 +90,5 @@ class LoginPageViewController: UIViewController, WKNavigationDelegate {
                webView.load(URLRequest(url: URL(string: "https://vk.com/")!))
            }
        }
-    
-
-
 }
 

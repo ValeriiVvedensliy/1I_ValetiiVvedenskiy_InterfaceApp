@@ -3,9 +3,19 @@ import RealmSwift
 
 class FriendsListTableViewController: UITableViewController {
     
-    private var vkLoader = VKDataSource()
     private var vkFriendsLoader = VKFriendsDataSource()
     private var friends: [RFriend] = []
+    var notificationToken: NotificationToken?
+
+    var realm: Realm = {
+        let configrealm = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: configrealm)
+        return realm
+    }()
+
+    lazy var friendsFromRealm: Results<RFriend> = {
+        return realm.objects(RFriend.self)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,24 +39,27 @@ class FriendsListTableViewController: UITableViewController {
     }
     
     private func setUpData() {
-        vkLoader.loadData(.usersInfo)
-
-        loadFriendsFromRealm()
-        vkFriendsLoader.loadData() { [weak self] () in
-                self?.loadFriendsFromRealm()
-        }
+        subscribeToNotificationRealm()
+        vkFriendsLoader.loadData()
     }
     
     func loadFriendsFromRealm() {
-        do {
-            let realm = try Realm()
-            let friendsFromRealm = realm.objects(RFriend.self)
             friends = Array(friendsFromRealm)
-            
-            guard friends.count != 0 else { return } // проверка, что в реалме что-то есть
+            guard friends.count != 0 else { return }
+
             tableView.reloadData()
-        } catch {
-            print(error)
+    }
+    
+    private func subscribeToNotificationRealm() {
+        notificationToken = friendsFromRealm.observe { [weak self] (changes) in
+            switch changes {
+            case .initial:
+                self?.loadFriendsFromRealm()
+            case .update:
+                self?.loadFriendsFromRealm()
+            case let .error(error):
+                print(error)
+            }
         }
     }
     

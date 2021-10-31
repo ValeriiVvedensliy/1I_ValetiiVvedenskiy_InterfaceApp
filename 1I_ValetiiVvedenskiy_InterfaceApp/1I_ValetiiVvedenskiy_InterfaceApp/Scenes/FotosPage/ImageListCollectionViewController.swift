@@ -11,8 +11,18 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
     let interacriveTransition = CustomInterectiveTransition()
     var collectionPhotos: [RPhoto] = []
     private var imageSource = VKPhotoDataSource()
+    private var notificationToken: NotificationToken?
     
+    var realm: Realm = {
+        let configrealm = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: configrealm)
+        return realm
+    }()
     
+    lazy var photosFromRealm: Results<RPhoto> = {
+        return realm.objects(RPhoto.self).filter("ownerID == %@", owner_id)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.delegate = self
@@ -59,21 +69,26 @@ class ImageListCollectionViewController: UICollectionViewController, UINavigatio
     }
     
     private func loadData() {
-        loadPhotosFromRealm()
-        imageSource.loadData(ownerID: owner_id) { [weak self] () in
-            self?.loadPhotosFromRealm()
-        }
+        subscribeToNotificationRealm()
+        imageSource.loadData(ownerID: owner_id)
     }
     
     func loadPhotosFromRealm() {
-        do {
-            let realm = try Realm()
-            let photosFromRealm = realm.objects(RPhoto.self).filter("ownerID == %@", owner_id)
-            collectionPhotos = Array(photosFromRealm)
-            guard collectionPhotos.count != 0 else { return }
-            collectionView.reloadData()
-        } catch {
-            print(error)
+        collectionPhotos = Array(photosFromRealm)
+        guard collectionPhotos.count != 0 else { return }
+        collectionView.reloadData()
+    }
+    
+    private func subscribeToNotificationRealm() {
+        notificationToken = photosFromRealm.observe { [weak self] (changes) in
+            switch changes {
+            case .initial:
+                self?.loadPhotosFromRealm()
+            case .update:
+                self?.loadPhotosFromRealm()
+            case let .error(error):
+                print(error)
+            }
         }
     }
     

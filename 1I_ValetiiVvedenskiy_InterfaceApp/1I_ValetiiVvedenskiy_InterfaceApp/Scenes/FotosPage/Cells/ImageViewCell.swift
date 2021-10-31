@@ -2,12 +2,12 @@ import UIKit
 
 class ImageViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var accountImage: UIImageView!
-    @IBOutlet weak var likeCount: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
-    
-    public static var Key: String = "ImageViewCell"
-    static var Nib: UINib = UINib.init(nibName: "ImageViewCell", bundle: Bundle(for:  ImageViewCell.self))
+    @IBOutlet public var accountImage: UIImageView!
+    @IBOutlet private var likeCount: UILabel!
+    @IBOutlet private var likeButton: UIButton!
+
+    static var Key = String(describing: ImageViewCell.self)
+    static var Nib = UINib(nibName: Key, bundle: Bundle(for: ImageViewCell.self))
     
     private var count = 0
     

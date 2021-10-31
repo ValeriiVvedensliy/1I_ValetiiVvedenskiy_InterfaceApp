@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class VKPhotoDataSource {
-    func loadData(ownerID: String, complition: @escaping () -> Void ) {
+    func loadData(ownerID: String) {
         
         let dataSource = DataSource()
         let configuration = URLSessionConfiguration.default
@@ -40,12 +40,9 @@ class VKPhotoDataSource {
                 }
                 DispatchQueue.main.async {
                     dataSource.savePhotosToRealm(photosFriend, ownerID)
-                    complition()
                 }
             } catch let error {
-                print(error)
-                complition()
-            }
+                print(error)            }
         }
         task.resume()
     }
