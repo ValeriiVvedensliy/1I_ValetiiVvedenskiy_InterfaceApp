@@ -6,15 +6,29 @@
 //
 
 import UIKit
+import RealmSwift
 
-class NewsTableViewController: UITableViewController, UICollectionViewDataSource,
-                               UICollectionViewDelegateFlowLayout {
+class NewsTableViewController: UITableViewController {
+  private var images: List<String>!
+  private var news: [RNews]?
+  private var dataSource = VKNewsDataSource()
+  private var notificationToken: NotificationToken?
   
-  var images = ["albert", "albert_2", "junior", "sport"]
+  var realm: Realm = {
+    let configrealm = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+    let realm = try! Realm(configuration: configrealm)
+    return realm
+  }()
+  
+  lazy var newsFromRealm: Results<RNews> = {
+    return realm.objects(RNews.self)
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setUpView()
     registerNib()
+    setUpData()
   }
   
   private func setUpView() {
@@ -32,10 +46,34 @@ class NewsTableViewController: UITableViewController, UICollectionViewDataSource
     tableView.register(FooterViewCell.Nib, forCellReuseIdentifier: FooterViewCell.Key)
   }
   
+  private func setUpData() {
+    subscribeToNotificationRealm()
+    dataSource.loadData()
+  }
+  
+  private func subscribeToNotificationRealm() {
+    notificationToken = newsFromRealm.observe { [weak self] (changes) in
+      switch changes {
+      case .initial:
+        self?.loadNewsFromRealm()
+      case .update:
+        self?.loadNewsFromRealm()
+      case let .error(error):
+        print(error)
+      }
+    }
+  }
+  
+  func loadNewsFromRealm() {
+    news = Array(newsFromRealm)
+    guard newsFromRealm.count != 0 else { return }
+    tableView.reloadData()
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return news?.count ?? 0
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,12 +81,14 @@ class NewsTableViewController: UITableViewController, UICollectionViewDataSource
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let news = self.news else { return UITableViewCell() }
+    let model = news[indexPath.section]
     switch indexPath.row {
     case 0:
       guard let headerCell = tableView.dequeueReusableCell(
         withIdentifier: HeaderViewCell.Key,
         for: indexPath) as? HeaderViewCell else { return UITableViewCell() }
-      headerCell.setUpCell(image: "junior", userName: "Vvedenskiy Valerii", date: "05.10.2021")
+      headerCell.setUpCell(image: model.avatar, userName: model.name, date: model.date)
       
       return headerCell
       
@@ -56,7 +96,7 @@ class NewsTableViewController: UITableViewController, UICollectionViewDataSource
       guard let textCell = tableView.dequeueReusableCell(
         withIdentifier: TextViewCell.Key,
         for: indexPath) as? TextViewCell else { return UITableViewCell() }
-      textCell.setUpCell(newsText: "Back in the days of iOS 6, Apple introduced a wonderful new technology: Auto Layout. Developers rejoiced; parties commenced in the streets; bands wrote songs to celebrate its greatness…")
+      textCell.setUpCell(newsText: model.textNews)
       
       return textCell
       
@@ -65,9 +105,7 @@ class NewsTableViewController: UITableViewController, UICollectionViewDataSource
         withIdentifier: ImagesViewCell.Key,
         for: indexPath) as? ImagesViewCell else { return UITableViewCell() }
       
-      if let layout = photoCell.collectionView?.collectionViewLayout as? CustomLayout {
-        layout.delegate = self
-      }
+      photoCell.setUpCell(image: model.imageNews)
 
       return photoCell
       
@@ -75,7 +113,10 @@ class NewsTableViewController: UITableViewController, UICollectionViewDataSource
       guard let footerCell = tableView.dequeueReusableCell(
         withIdentifier: FooterViewCell.Key,
         for: indexPath) as? FooterViewCell else { return UITableViewCell() }
-      footerCell.setUpCell(likeCount: "5", commentCount: "4", shareCount: "10")
+      footerCell.setUpCell(
+        likeCount: String(model.likes),
+        commentCount: String(model.comments),
+        shareCount: String(model.reposts))
       
       return footerCell
       
@@ -83,54 +124,4 @@ class NewsTableViewController: UITableViewController, UICollectionViewDataSource
       return UITableViewCell()
     }
   }
-  
-  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    
-    if let cell = cell as? ImagesViewCell {
-      
-      cell.collectionView.dataSource = self
-      cell.collectionView.delegate = self
-      cell.collectionView.tag = indexPath.section
-      cell.collectionView.reloadData()
-      
-    }
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return images.count
-  }
-    
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let imageCell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: ImageCollectionViewCell.Key,
-      for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
-    
-    imageCell.setUpCell(image: images[indexPath.row])
-    return imageCell
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                      sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-    let itemSize = (collectionView.frame.width - (collectionView.contentInset.left
-                                                  + collectionView.contentInset.right + 10)) / 2
-
-    return CGSize(width: itemSize, height: itemSize)
-  }
-  
-}
-
-extension NewsTableViewController: CustomLayoutDelegate {
-  func collectionView(
-    _ collectionView: UICollectionView,
-    heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-    let image = UIImage(named: images[indexPath.item]) ?? UIImage()
-
-      return image.size.height
-  }
-  
-  func collectionView(_ collectionView: UICollectionView) -> Int {
-    return images.count
-  }
-
 }
