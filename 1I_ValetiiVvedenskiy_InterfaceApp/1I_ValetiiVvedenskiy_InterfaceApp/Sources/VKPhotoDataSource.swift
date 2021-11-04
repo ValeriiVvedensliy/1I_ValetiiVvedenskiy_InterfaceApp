@@ -29,7 +29,7 @@ class VKPhotoDataSource {
             guard let data = data else { return }
             
             do {
-                let arrayPhotosFriend = try JSONDecoder().decode(Photo.self, from: data)
+                let arrayPhotosFriend = try JSONDecoder().decode(ResponsePhoto.self, from: data)
                 var photosFriend: [RPhoto] = []
                 var ownerID = ""
                 for i in 0...arrayPhotosFriend.response.items.count-1 {

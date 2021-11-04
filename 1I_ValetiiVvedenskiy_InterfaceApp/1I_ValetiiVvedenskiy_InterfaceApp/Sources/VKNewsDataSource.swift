@@ -32,7 +32,7 @@ class VKNewsDataSource {
       guard let data = data else { return }
       
       do {
-        let arrayNews = try JSONDecoder().decode(News.self, from: data)
+        let arrayNews = try JSONDecoder().decode(ResponseNews.self, from: data)
         
         guard arrayNews.response.items.isEmpty == false else { return }
         

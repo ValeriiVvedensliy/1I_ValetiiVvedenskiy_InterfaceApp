@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImagesViewCell: UITableViewCell {
   @IBOutlet weak var rootView: UIView!
@@ -21,9 +22,7 @@ class ImagesViewCell: UITableViewCell {
     rootView.backgroundColor = .darkGray
   }
   
-  func setUpCell(image: String) {
-    guard let url = URL(string: image) else { return }
-
-    newsImageView.load(url: url)
+  func setUpCell(image: URL) {
+    newsImageView.kf.setImage(with: image)
   }
 }

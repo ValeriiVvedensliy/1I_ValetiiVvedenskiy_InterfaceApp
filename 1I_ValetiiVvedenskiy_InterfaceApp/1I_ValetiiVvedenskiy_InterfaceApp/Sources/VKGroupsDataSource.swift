@@ -29,7 +29,7 @@ class VKGroupsDataSource {
             guard let data = data else { return }
             
             do {
-                let arrayGroups = try JSONDecoder().decode(Groups.self, from: data)
+                let arrayGroups = try JSONDecoder().decode(ResponseGroups.self, from: data)
                 var fullGroupList: [RGroup] = []
                 for i in 0...arrayGroups.response.items.count-1 {
                     let name = ((arrayGroups.response.items[i].name))

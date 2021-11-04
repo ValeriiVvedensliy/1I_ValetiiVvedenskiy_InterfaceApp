@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HeaderViewCell: UITableViewCell {
   
@@ -25,10 +26,9 @@ class HeaderViewCell: UITableViewCell {
     dateLabel.textColor = .white
   }
   
-  func setUpCell(image: String, userName: String, date: String) {
-    guard let url = URL(string: image) else { return }
+  func setUpCell(image: URL, userName: String, date: String) {
     userNameLabel.text = userName
-    userImageView.load(url: url)
+    userImageView.kf.setImage(with: image)
     dateLabel.text = date
     userImageView.layer.cornerRadius = userImageView.bounds.height / 2
   }

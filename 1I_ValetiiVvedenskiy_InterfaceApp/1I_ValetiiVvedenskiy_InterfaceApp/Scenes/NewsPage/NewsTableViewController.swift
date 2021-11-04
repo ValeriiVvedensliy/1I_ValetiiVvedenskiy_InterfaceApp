@@ -9,8 +9,7 @@ import UIKit
 import RealmSwift
 
 class NewsTableViewController: UITableViewController {
-  private var images: List<String>!
-  private var news: [RNews]?
+  var news: [News]?
   private var dataSource = VKNewsDataSource()
   private var notificationToken: NotificationToken?
   
@@ -65,9 +64,23 @@ class NewsTableViewController: UITableViewController {
   }
   
   func loadNewsFromRealm() {
-    news = Array(newsFromRealm)
-    guard newsFromRealm.count != 0 else { return }
-    tableView.reloadData()
+    DispatchQueue.main.async { [weak self] in
+      guard let self = self else { return }
+      
+      let rNews = Array(self.newsFromRealm)
+      self.news = rNews.map {model -> News in
+        News(
+          name: model.name,
+          avatar: model.avatar.loadImage(),
+          date: model.date,
+          textNews: model.textNews,
+          imageNews: model.imageNews.loadImage(),
+          likes: model.likes,
+          comments: model.comments,
+          reposts: model.reposts)
+      }
+      self.tableView.reloadData()
+    }
   }
   
   // MARK: - Table view data source
@@ -106,7 +119,7 @@ class NewsTableViewController: UITableViewController {
         for: indexPath) as? ImagesViewCell else { return UITableViewCell() }
       
       photoCell.setUpCell(image: model.imageNews)
-
+      
       return photoCell
       
     case 3:
