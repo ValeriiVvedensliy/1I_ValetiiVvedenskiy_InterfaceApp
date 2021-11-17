@@ -6,6 +6,4 @@ target '1I_ValetiiVvedenskiy_InterfaceApp' do
   use_frameworks!
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher', '~> 7.0'
-  pod 'RealmSwift'
-  pod 'PromiseKit'
 end
