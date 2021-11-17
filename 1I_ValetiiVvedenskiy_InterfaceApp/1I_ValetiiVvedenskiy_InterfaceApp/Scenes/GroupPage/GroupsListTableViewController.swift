@@ -40,7 +40,7 @@ class GroupsListTableViewController: UITableViewController {
   
   private func setUpData() {
     subscribeToNotificationRealm()
-    dataSource.loadData()
+    dataSource.getData()
   }
   
   private func subscribeToNotificationRealm() {
