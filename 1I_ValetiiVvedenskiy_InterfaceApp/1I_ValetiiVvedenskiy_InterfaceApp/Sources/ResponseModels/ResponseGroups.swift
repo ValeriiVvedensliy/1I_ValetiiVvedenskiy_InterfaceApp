@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Groups: Decodable {
+struct ResponseGroups: Decodable {
     var response: Response
 
     struct Response: Decodable {

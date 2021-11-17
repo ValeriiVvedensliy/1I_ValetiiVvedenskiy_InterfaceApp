@@ -21,19 +21,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSG-G8-hSc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bpR-R2-otQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-cG-arb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewLayout key="collectionViewLayout" id="jdX-4b-rQN" customClass="CustomLayout" customModule="_I_ValetiiVvedenskiy_InterfaceApp" customModuleProvider="target"/>
-                            </collectionView>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bpR-R2-otQ" secondAttribute="trailing" id="1Ar-Oc-J0h"/>
-                            <constraint firstItem="bpR-R2-otQ" firstAttribute="top" secondItem="gSG-G8-hSc" secondAttribute="top" id="MMP-3p-oiK"/>
-                            <constraint firstItem="bpR-R2-otQ" firstAttribute="leading" secondItem="gSG-G8-hSc" secondAttribute="leading" id="WA5-uG-cIQ"/>
-                            <constraint firstAttribute="bottom" secondItem="bpR-R2-otQ" secondAttribute="bottom" id="bkO-gN-KS7"/>
+                            <constraint firstItem="D5r-cG-arb" firstAttribute="leading" secondItem="gSG-G8-hSc" secondAttribute="leading" id="JNv-Po-Q0y"/>
+                            <constraint firstAttribute="trailing" secondItem="D5r-cG-arb" secondAttribute="trailing" id="Vpf-Db-FTL"/>
                             <constraint firstAttribute="height" constant="300" id="i5F-ah-Rjf"/>
+                            <constraint firstAttribute="bottom" secondItem="D5r-cG-arb" secondAttribute="bottom" id="oKn-u8-J4K"/>
+                            <constraint firstItem="D5r-cG-arb" firstAttribute="top" secondItem="gSG-G8-hSc" secondAttribute="top" id="viM-2C-Epl"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -46,16 +44,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="collectionView" destination="bpR-R2-otQ" id="XO9-Eq-RVg"/>
+                <outlet property="newsImageView" destination="D5r-cG-arb" id="p7m-e8-9qG"/>
                 <outlet property="rootView" destination="gSG-G8-hSc" id="xTW-o2-4uc"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

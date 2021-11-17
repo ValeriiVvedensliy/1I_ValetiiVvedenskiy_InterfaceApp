@@ -1,7 +1,5 @@
 import UIKit
 import WebKit
-import FirebaseDatabase
-
 class LoginPageViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var rootView: UIView!
@@ -32,7 +30,7 @@ class LoginPageViewController: UIViewController, WKNavigationDelegate {
             URLQueryItem(name: "client_id", value: "7973114"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-            URLQueryItem(name: "scope", value: "friends,photos,groups"),
+            URLQueryItem(name: "scope", value: "friends,photos,groups,wall"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.81")
         ]

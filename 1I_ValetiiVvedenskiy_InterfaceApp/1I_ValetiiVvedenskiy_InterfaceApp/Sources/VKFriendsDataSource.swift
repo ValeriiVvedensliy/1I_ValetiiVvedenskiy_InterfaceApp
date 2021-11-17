@@ -30,7 +30,7 @@ class VKFriendsDataSource {
             guard let data = data else { return }
             
             do {
-                let arrayFriends = try JSONDecoder().decode(Friends.self, from: data)
+                let arrayFriends = try JSONDecoder().decode(ResponseFriends.self, from: data)
                 var fullNamesFriends: [RFriend] = []
                 for i in 0...arrayFriends.response.items.count-1 {
                     let name = ((arrayFriends.response.items[i].first_name) + " " + (arrayFriends.response.items[i].last_name))

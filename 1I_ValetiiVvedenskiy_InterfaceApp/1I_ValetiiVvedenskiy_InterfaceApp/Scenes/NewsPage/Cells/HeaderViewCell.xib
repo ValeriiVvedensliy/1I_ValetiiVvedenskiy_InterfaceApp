@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,33 +21,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="auA-gD-CdC">
-                                <rect key="frame" x="25" y="12.5" width="55" height="55"/>
+                                <rect key="frame" x="5" y="12.5" width="55" height="55"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="919-el-kuM"/>
                                     <constraint firstAttribute="height" constant="55" id="Rch-MD-Btg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m19-3o-Ber">
-                                <rect key="frame" x="103" y="12" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m19-3o-Ber">
+                                <rect key="frame" x="83" y="12" width="232" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5P-DD-JOF">
-                                <rect key="frame" x="103" y="41" width="31" height="14.5"/>
+                                <rect key="frame" x="83" y="40.5" width="31" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="auA-gD-CdC" firstAttribute="leading" secondItem="mhe-od-zAC" secondAttribute="leading" constant="25" id="J3Q-Pi-6i8"/>
+                            <constraint firstItem="auA-gD-CdC" firstAttribute="leading" secondItem="mhe-od-zAC" secondAttribute="leading" constant="5" id="J3Q-Pi-6i8"/>
                             <constraint firstItem="auA-gD-CdC" firstAttribute="centerY" secondItem="mhe-od-zAC" secondAttribute="centerY" id="KSk-5s-W1U"/>
                             <constraint firstItem="b5P-DD-JOF" firstAttribute="leading" secondItem="auA-gD-CdC" secondAttribute="trailing" constant="23" id="VHv-tQ-FWv"/>
                             <constraint firstItem="m19-3o-Ber" firstAttribute="top" secondItem="mhe-od-zAC" secondAttribute="top" constant="12" id="Vol-Ix-SRZ"/>
                             <constraint firstItem="b5P-DD-JOF" firstAttribute="top" secondItem="m19-3o-Ber" secondAttribute="bottom" constant="8" symbolic="YES" id="pca-Fh-9Gf"/>
                             <constraint firstAttribute="height" constant="80" id="qgq-NP-Kbi"/>
+                            <constraint firstAttribute="trailing" secondItem="m19-3o-Ber" secondAttribute="trailing" constant="5" id="uaf-bY-3Zf"/>
                             <constraint firstItem="m19-3o-Ber" firstAttribute="leading" secondItem="auA-gD-CdC" secondAttribute="trailing" constant="23" id="y2F-Uz-dlq"/>
                         </constraints>
                     </view>
