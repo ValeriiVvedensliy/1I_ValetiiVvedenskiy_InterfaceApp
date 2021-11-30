@@ -1,5 +1,6 @@
 import UIKit
 import RealmSwift
+import PromiseKit
 
 class FriendsListTableViewController: UITableViewController {
   
@@ -40,7 +41,7 @@ class FriendsListTableViewController: UITableViewController {
   
   private func setUpData() {
     subscribeToNotificationRealm()
-    vkFriendsLoader.loadData()
+    vkFriendsLoader.getData()
   }
   
   func loadFriendsFromRealm() {
