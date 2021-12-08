@@ -4,7 +4,7 @@ import UIKit
 
 class GroupsListTableViewController: UITableViewController {
   
-  private var groups: [Group]?
+  private var groups: [GroupViewCellModel]?
   private var dataSource = VKGroupsDataSource()
   private var notificationToken: NotificationToken?
   
@@ -61,8 +61,8 @@ class GroupsListTableViewController: UITableViewController {
       guard let self = self else { return }
 
       let rGroups = Array(self.groupsFromRealm)
-      self.groups = rGroups.map { model -> Group in
-        Group(
+      self.groups = rGroups.map { model -> GroupViewCellModel in
+        GroupViewCellModel(
           groupName: model.groupName,
           groupLogo: model.groupLogo.loadImage()
         )
@@ -83,7 +83,7 @@ class GroupsListTableViewController: UITableViewController {
     guard let groups = groups else { fatalError() }
     let group = groups[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: GroupViewCell.Key) as! GroupViewCell
-    cell.setUpCell(group.groupLogo, group.groupName, true)
+    cell.config(item: group)
     
     return cell
   }
