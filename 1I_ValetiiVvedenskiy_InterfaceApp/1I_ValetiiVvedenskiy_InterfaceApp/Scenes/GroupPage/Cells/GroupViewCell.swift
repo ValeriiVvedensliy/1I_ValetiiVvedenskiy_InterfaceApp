@@ -1,11 +1,10 @@
 import UIKit
 import Kingfisher
 
-class GroupViewCell: UITableViewCell {
+class GroupViewCell: TableViewCell<GroupViewCellModel> {
   
   @IBOutlet private var imageGroup: UIImageView!
   @IBOutlet private var nameGroup: UILabel!
-  @IBOutlet private var addBtn: UIButton!
   @IBOutlet private var rootView: UIView!
   
   static var Key = String(describing: GroupViewCell.self)
@@ -18,13 +17,11 @@ class GroupViewCell: UITableViewCell {
     imageGroup.contentMode = .scaleAspectFill
     rootView.backgroundColor = .clear
     self.backgroundColor = .clear
+    self.isUserInteractionEnabled = false
   }
   
-  public func setUpCell(_ imageGroup: URL, _ nameGroup: String, _ buttonIsHide: Bool) {
-    self.imageGroup.kf.setImage(with: imageGroup)
-    self.nameGroup.text = nameGroup
-    self.addBtn.tintColor = .white
-    self.addBtn.isHidden = buttonIsHide
-    self.isUserInteractionEnabled = false
+  override func config(item: GroupViewCellModel) {
+    self.imageGroup.kf.setImage(with: item.groupLogo)
+    self.nameGroup.text = item.groupName
   }
 }

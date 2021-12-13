@@ -1,14 +1,13 @@
 //
-//  Group.swift
+//  GroupViewCellModel.swift
 //  1I_ValetiiVvedenskiy_InterfaceApp
 //
-//  Created by Valera Vvedenskiy on 04.11.2021.
+//  Created by Valera Vvedenskiy on 08.12.2021.
 //
 
 import Foundation
-import UIKit
 
-class Group {
+class GroupViewCellModel: CellModel {
   var groupName: String
   var groupLogo: URL
   

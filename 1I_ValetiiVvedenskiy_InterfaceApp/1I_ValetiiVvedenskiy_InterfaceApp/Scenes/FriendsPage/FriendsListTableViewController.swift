@@ -5,7 +5,7 @@ import PromiseKit
 class FriendsListTableViewController: UITableViewController {
   
   private var vkFriendsLoader = VKFriendsDataSource()
-  private var friends: [Friend] = []
+  private var friends: [AccountViewCellModel] = []
   var notificationToken: NotificationToken?
   
   var realm: Realm = {
@@ -47,8 +47,8 @@ class FriendsListTableViewController: UITableViewController {
   func loadFriendsFromRealm() {
     DispatchQueue.main.async {
       let rFriends = Array(self.friendsFromRealm)
-      self.friends = rFriends.map { model -> Friend in
-        Friend(
+      self.friends = rFriends.map { model -> AccountViewCellModel in
+        AccountViewCellModel(
           userName: model.userName,
           userAvatar: model.userAvatar.loadImage(),
           ownerID: model.ownerID
@@ -83,7 +83,7 @@ class FriendsListTableViewController: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: AccountViewCell.Key) as! AccountViewCell
     let account = friends[indexPath.row]
     
-    cell.setUpCell(account)
+    cell.config(item: account)
     
     return cell
   }

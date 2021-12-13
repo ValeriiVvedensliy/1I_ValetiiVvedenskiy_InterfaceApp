@@ -1,9 +1,7 @@
 import UIKit
 import Kingfisher
 
-class AccountViewCell: UITableViewCell {
-  
-  
+class AccountViewCell: TableViewCell<AccountViewCellModel> {
   @IBOutlet private var accountIcon: UIImageView!
   @IBOutlet private var accountName: UILabel!
   @IBOutlet private var phoneIcon: UIImageView!
@@ -17,9 +15,9 @@ class AccountViewCell: UITableViewCell {
     setupView()
   }
   
-  public func setUpCell(_ account: Friend) {
-    accountName.text = "\(account.userName)"
-    accountIcon.kf.setImage(with: account.userAvatar)
+  override func config(item: AccountViewCellModel) {
+    accountName.text = "\(item.userName)"
+    accountIcon.kf.setImage(with: item.userAvatar)
     accountIcon.contentMode = .scaleAspectFill
   }
   
