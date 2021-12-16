@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class HeaderViewCell: UITableViewCell {
+class HeaderViewCell: TableViewCell<HeaderViewCellModel> {
   
   @IBOutlet weak var userImageView: UIImageView!
   @IBOutlet weak var userNameLabel: UILabel!
@@ -26,11 +26,10 @@ class HeaderViewCell: UITableViewCell {
     dateLabel.textColor = .white
   }
   
-  func setUpCell(image: URL, userName: String, date: String) {
-    userNameLabel.text = userName
-    userImageView.kf.setImage(with: image)
-    dateLabel.text = date
+  override func config(item: HeaderViewCellModel) {
+    userNameLabel.text = item.userName
+    userImageView.kf.setImage(with: item.image)
+    dateLabel.text = item.date
     userImageView.layer.cornerRadius = userImageView.bounds.height / 2
   }
-  
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TextViewCell: UITableViewCell {
+class TextViewCell: TableViewCell<TextViewCellModel> {
 
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var newsTextLabel: UILabel!
@@ -22,7 +22,7 @@ class TextViewCell: UITableViewCell {
         newsTextLabel.textColor = .white
     }
     
-    func setUpCell(newsText: String) {
-        newsTextLabel.text = newsText
-    }
+  override func config(item: TextViewCellModel) {
+    newsTextLabel.text = item.text
+  }
 }
