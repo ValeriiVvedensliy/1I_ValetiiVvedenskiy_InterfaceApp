@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ImagesViewCell: UITableViewCell {
+class ImagesViewCell: TableViewCell<ImageViewCellModel> {
   @IBOutlet weak var rootView: UIView!
   @IBOutlet weak var newsImageView: UIImageView!
   
@@ -22,7 +22,7 @@ class ImagesViewCell: UITableViewCell {
     rootView.backgroundColor = .darkGray
   }
   
-  func setUpCell(image: URL) {
-    newsImageView.kf.setImage(with: image)
+  override func config(item: ImageViewCellModel) {
+    newsImageView.kf.setImage(with: item.image)
   }
 }

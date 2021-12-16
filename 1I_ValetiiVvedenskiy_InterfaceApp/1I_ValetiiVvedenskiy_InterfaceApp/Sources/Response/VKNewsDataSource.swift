@@ -7,11 +7,15 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
 
 class VKNewsDataSource {
   let dataSource = DataSource()
+  var news: [News] = []
 
-  func loadData() {
+  func loadData(isDataSourcePrefetching: Bool,
+                nextPageNews nextNewsID: String = "",
+                completion: (([News], String) -> Void)? = nil) {
     let configuration = URLSessionConfiguration.default
     let session =  URLSession(configuration: configuration)
     
@@ -23,6 +27,7 @@ class VKNewsDataSource {
       URLQueryItem(name: "owner_id", value: String(Session.shared.userID)),
       URLQueryItem(name: "access_token", value: Session.shared.token),
       URLQueryItem(name: "filters", value: "post,photo"),
+      URLQueryItem(name: "start_from", value: nextNewsID),
       URLQueryItem(name: "count", value: "10"),
       URLQueryItem(name: "v", value: "5.81")
     ]
@@ -33,7 +38,9 @@ class VKNewsDataSource {
       
       do {
         let arrayNews = try JSONDecoder().decode(ResponseNews.self, from: data)
-        
+        let json = try? JSON(data: data)
+        let nextFrom = json?["response"]["next_from"].stringValue
+
         guard arrayNews.response.items.isEmpty == false else { return }
         
         var avatar: String = ""
@@ -72,20 +79,38 @@ class VKNewsDataSource {
               avatar = arrayNews.response.groups[i].avatar
             }
           }
+          if !isDataSourcePrefetching {
+            newsList.append(RNews(
+              name: name,
+              avatar: avatar,
+              date: strDate,
+              textNews: text,
+              imageNews: urlImage,
+              likes: likes,
+              comments: comments,
+              reposts: reposts
+            ))
+          } else {
+            self.news.append(News(
+              name: name,
+              avatar: avatar.loadImage(),
+              date: strDate,
+              textNews: text,
+              imageNews: urlImage.loadImage(),
+              likes: likes,
+              comments: comments,
+              reposts: reposts
+            ))
+          }
 
-          newsList.append(RNews(
-            name: name,
-            avatar: avatar,
-            date: strDate,
-            textNews: text,
-            imageNews: urlImage,
-            likes: likes,
-            comments: comments,
-            reposts: reposts
-          ))
         }
         DispatchQueue.main.async {
+          if !isDataSourcePrefetching {
             self.dataSource.saveNewsToRealm(newsList)
+          } else {
+            guard let completion = completion else { return }
+            completion(self.news, nextFrom ?? "")
+          }
         }
       } catch let error {
         print(error)
@@ -93,5 +118,4 @@ class VKNewsDataSource {
     }
     task.resume()
   }
-  
 }

@@ -8,4 +8,5 @@ target '1I_ValetiiVvedenskiy_InterfaceApp' do
   pod 'Kingfisher', '~> 7.0' 
   pod 'PromiseKit'
   pod 'RealmSwift'
+  pod 'SwiftyJSON'
 end

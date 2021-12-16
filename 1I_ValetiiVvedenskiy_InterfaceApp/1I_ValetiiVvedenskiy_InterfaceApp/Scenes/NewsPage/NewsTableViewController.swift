@@ -12,6 +12,10 @@ class NewsTableViewController: UITableViewController {
   var news: [News]?
   private var dataSource = VKNewsDataSource()
   private var notificationToken: NotificationToken?
+  lazy var newsDataSource = VKNewsDataSource()
+  var isLoadingNews = false
+  var nextNewsID = ""
+  let maxRow = 10
   
   var realm: Realm = {
     let configrealm = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
@@ -23,17 +27,25 @@ class NewsTableViewController: UITableViewController {
     return realm.objects(RNews.self)
   }()
   
+  let dateFormatter: DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "dd.MM.yyyy HH:mm:ss"
+    return df
+  }()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setUpView()
     registerNib()
     setUpData()
+    addRefreshControl()
   }
   
   private func setUpView() {
     tableView.backgroundColor = UIColor.darkGray
     tableView.separatorStyle = .none
     tableView.dataSource = self
+    tableView.prefetchDataSource = self
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 44
   }
@@ -47,7 +59,7 @@ class NewsTableViewController: UITableViewController {
   
   private func setUpData() {
     subscribeToNotificationRealm()
-    dataSource.loadData()
+    dataSource.loadData(isDataSourcePrefetching: false)
   }
   
   private func subscribeToNotificationRealm() {
@@ -60,6 +72,7 @@ class NewsTableViewController: UITableViewController {
       case let .error(error):
         print(error)
       }
+      self?.refreshControl?.endRefreshing()
     }
   }
   
@@ -83,6 +96,17 @@ class NewsTableViewController: UITableViewController {
     }
   }
   
+  private func addRefreshControl() {
+    refreshControl = UIRefreshControl()
+    refreshControl?.attributedTitle = NSAttributedString(string: "Новости загружаются...")
+    refreshControl?.tintColor = .gray
+    refreshControl?.addTarget(self, action: #selector(refreshNewsList), for: .valueChanged)
+  }
+  
+  @objc private func refreshNewsList() {
+    newsDataSource.loadData(isDataSourcePrefetching: false)
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,40 +125,64 @@ class NewsTableViewController: UITableViewController {
       guard let headerCell = tableView.dequeueReusableCell(
         withIdentifier: HeaderViewCell.Key,
         for: indexPath) as? HeaderViewCell else { return UITableViewCell() }
-      headerCell.setUpCell(image: model.avatar, userName: model.name, date: model.date)
-      
+      headerCell.config(
+        item: HeaderViewCellModel(
+          image: model.avatar,
+          userName: model.name,
+          date: model.date
+        )
+      )
+
       return headerCell
       
     case 1:
       guard let textCell = tableView.dequeueReusableCell(
         withIdentifier: TextViewCell.Key,
         for: indexPath) as? TextViewCell else { return UITableViewCell() }
-      textCell.setUpCell(newsText: model.textNews)
+      textCell.config(item: TextViewCellModel(text: model.textNews))
       
       return textCell
-      
+
     case 2:
       guard let photoCell = tableView.dequeueReusableCell(
         withIdentifier: ImagesViewCell.Key,
         for: indexPath) as? ImagesViewCell else { return UITableViewCell() }
-      
-      photoCell.setUpCell(image: model.imageNews)
-      
+      photoCell.config(item: ImageViewCellModel(image: model.imageNews))
+
       return photoCell
       
     case 3:
       guard let footerCell = tableView.dequeueReusableCell(
         withIdentifier: FooterViewCell.Key,
         for: indexPath) as? FooterViewCell else { return UITableViewCell() }
-      footerCell.setUpCell(
-        likeCount: String(model.likes),
-        commentCount: String(model.comments),
-        shareCount: String(model.reposts))
+      footerCell.config(
+        item: FooterViewCellModel(
+          likeCount: String(model.likes),
+          commentCount: String(model.comments),
+          shareCount: String(model.reposts)
+        )
+      )
       
       return footerCell
       
     default:
       return UITableViewCell()
+    }
+  }
+}
+
+extension NewsTableViewController: UITableViewDataSourcePrefetching {
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    guard isLoadingNews == false,
+          let news = news,
+          self.maxRow > (news.count - 4) else { return }
+    
+    isLoadingNews = true
+    newsDataSource.loadData(isDataSourcePrefetching: true, nextPageNews: nextNewsID) { [weak self] (nextNews, nextFromID) in
+      self?.news?.append(contentsOf: nextNews)
+      self?.nextNewsID = nextFromID
+      self?.tableView.reloadData()
+      self?.isLoadingNews = false
     }
   }
 }
